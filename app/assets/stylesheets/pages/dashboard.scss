@@ -1,0 +1,85 @@
+// Styling for Introduction and Mini-Profile section
+.intro {
+  background-color: $pale;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+
+  h2 {
+    color: $purple;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $grayishorange;
+  }
+
+  .mini-profile {
+    margin-top: 20px;
+    ul {
+      list-style-type: none;
+      li {
+        color: $bluepurple;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+// Styling for Calendar section
+.calendar {
+  h3 {
+    color: $purple;
+    margin-bottom: 10px;
+  }
+
+  /* Positioning for right side */
+  float: right;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+// Styling for Buttons section
+.actions {
+  h3 {
+    color: $purple;
+    margin-bottom: 10px;
+  }
+
+  /* Positioning for right side */
+  float: right;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 20px;
+
+  button {
+    background-color: $yellowgluco;
+    color: $pale;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($yellowgluco, 10%);
+    }
+  }
+}
+
+// Styling for Trends in BM section
+.trends,
+.progress {
+  h3 {
+    color: $purple;
+    margin-bottom: 10px;
+  }
+
+  /* Positioning for left side */
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 20px;
+}
