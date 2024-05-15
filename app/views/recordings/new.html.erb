@@ -1,0 +1,16 @@
+
+
+<%= simple_form_for(@recording) do |f| %>
+  <h1>Add Blood Glucose</h1>
+  <%= f.input :reading, label: 'Please type in your BM (mmol/l):' %>
+  <%= f.date_field :date %>
+  <%= f.input :time, :collection => ["BB(Before Breakfast)","AB(After Breakfast)" ,"AL(After Lunch)", "AD(After Dinner)"],  label: 'When was your glucose reading taken?', error: 'Timing is mandatory, please specify one', input_html: { maxlength: 200 } %>
+  <h1>Add Meal</h1>
+  <%= f.input :ingredients, as: :text, input_html: {rows: 50, cols: 100}, label: 'Describe what meal you had and describe quantity ', error: 'Please noted down your meal and give information on your meal', input_html: { maxlength: 200 } %>
+  <%= f.button :submit, 'Add' %>
+<% end %>
+
+
+
+<%= link_to "Back to Homepage", root_path %>
+<%= link_to "See All Trends", recordings_path %>

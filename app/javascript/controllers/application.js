@@ -1,5 +1,5 @@
 import { Application } from "@hotwired/stimulus"
-
+//= require date_wrapper
 const application = Application.start()
 
 // Configure Stimulus development experience
