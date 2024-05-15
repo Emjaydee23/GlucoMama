@@ -5,7 +5,7 @@
   <h2>Welcome, <%= current_user.first_name %>!</h2>
   <p>Tracking your glucose levels during pregnancy is crucial for a healthy you and your baby.</p>
   <div class="mini-profile">
-    <p>Profile:</p>
+    <p>Profile</p>
     <ul>
       <li>Name: <%= current_user.first_name %></li>
       <li>Email: <%= current_user.email %></li>
@@ -15,11 +15,19 @@
   </div>
 </div>
 
+
+
 <!-- Buttons to redirect to Recipe and Glucose Input pages -->
 <div class="actions">
+<div class="calendar">
+  <h3>Calendar</h3>
+  <%# <%= calendar_tag %>
 <h3>Actions</h3>
   <button><%= link_to "Explore Recipes", "#" %></button>
   <button><%= link_to "Log Blood Glucose", "#" %></button>
+  <button><%= link_to "View Blood Glocose", "#" %></button>
+  </div>
+
 </div>
 
 <!-- Trends in BM -->
@@ -30,10 +38,6 @@
 </div>
 
 <!-- Calendar to view the day -->
-<div class="calendar">
-  <h3>Calendar</h3>
-  <%# <%= calendar_tag %>
-</div>
 
 <!-- Current Progress Widget -->
 <div class="progress">
