@@ -1,0 +1,57 @@
+<!-- app/views/recipes/index.html.erb -->
+
+<!-- Set the title of the page -->
+<h1>Recipes</h1>
+
+<!-- Categories bar/buttons -->
+<div class="categories">
+  <button class="category-button">Breakfast</button>
+  <button class="category-button">Lunch</button>
+  <button class="category-button">Dinner</button>
+  <button class="category-button">Snacks</button>
+</div>
+
+<!-- Body of the page -->
+<div class="recipe-cards">
+  <!-- Replace the following with actual recipe data from your database -->
+  <% @recipes.each do |recipe| %>
+    <div class="card">
+      <%= image_tag recipe.image_url, class: "recipe-image" %>
+      <div class="card-body">
+        <h3 class="recipe-title"><%= recipe.name %></h3>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%# maybe use this instead of the above %>
+<div class="fluid-engine fe-container" id="fe-container">
+    <div class="fe-block fe-monday">
+        <!-- Placeholder image -->
+        <img src="placeholder_image_url" alt="Monday">
+        <div class="sqs-block html-block sqs-block-html" id="monday-block">
+            <div class="sqs-block-content">
+                <div class="sqs-html-content">
+                    <div class="sqsrte-scaled-text-container loaded">
+                        <span class="sqsrte-scaled-text">
+                            <p><strong>MONDAY</strong></p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fe-block fe-breakfast">
+        <div class="sqs-block html-block sqs-block-html" id="breakfast-block">
+            <!-- Placeholder image -->
+            <img src="placeholder_image_url" alt="Breakfast">
+            <div class="sqs-block-content">
+                <div class="sqs-html-content">
+                    <p><strong>BREAKFAST</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Rest of the HTML code for other meal blocks -->
+</div>
+<!-- app/views/recipes/show.html.erb -->
