@@ -13,15 +13,20 @@ class RecordingsController < ApplicationController
   def create
     @recording = Recording.new(recording_params)
     @recording.user = current_user
-    if @recording.save # After submitting the form , details are submitted to index with all the BM and meal submissions of the last wek
+    if @recording.save
+       # After submitting the form , details are submitted to index with all the BM and meal submissions of the last wek
       redirect_to recordings_path
+      # redirect_to feedback_path
+
     else
       render :new, status: :unprocessable_entity
     end
     #Also redirected to the fedback page - personalised writing # Ruby if else logic will be in the html itself
   end
 
-  def feedback
+  def show
+    # @reading = Recording.find(params[:id]).reading
+    @reading = current_user.Recording.find(params[:id]).reading
   end
 
   private

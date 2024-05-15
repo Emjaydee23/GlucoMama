@@ -54,6 +54,12 @@ gem "sassc-rails"
 # Glucomama - Date picker gem install for add blood glucose form
 gem 'date_wrapper'
 
+#Addition: FOR THE CHART! DON'T REMOVE IF YOU WANT THE CHART!
+gem "chartkick"
+
+#Groupdate
+gem "groupdate"
+
 group :development, :test do
   gem "dotenv-rails"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

@@ -3,6 +3,7 @@
 <%= simple_form_for(@recording) do |f| %>
   <h1>Add Blood Glucose</h1>
   <%= f.input :reading, label: 'Please type in your BM (mmol/l):' %>
+  <%= f.label :date %>
   <%= f.date_field :date %>
   <%= f.input :time, :collection => ["BB(Before Breakfast)","AB(After Breakfast)" ,"AL(After Lunch)", "AD(After Dinner)"],  label: 'When was your glucose reading taken?', error: 'Timing is mandatory, please specify one', input_html: { maxlength: 200 } %>
   <h1>Add Meal</h1>
