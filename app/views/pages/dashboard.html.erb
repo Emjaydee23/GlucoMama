@@ -1,20 +1,15 @@
 <!-- dashboard.html.erb -->
 
 <!-- Introduction and Mini-Profile -->
-<header class="intro">
-</header>
+<div class="intro" style="margin: 50px">
   <h2>Welcome, <%= current_user.first_name %>!</h2>
   <p>Tracking your glucose levels during pregnancy is crucial for a healthy you and your baby.</p>
-  <div class="mini-profile">
+  <div class="mini-profile" style="margin: 50px">
     <h3>Profile</h3>
-    <ul>
-      <li><strong>Name:</strong> <%= current_user.first_name %></li>
-      <li><strong>Email:</strong> <%= current_user.email %></li>
-      <li><strong>Date of Birth:</strong> <%= current_user.birthday %></li>
-      <li><strong>Due Date:</strong> <%= current_user.due_date %></li>
-    </ul>
+      <p><strong>Name:</strong> <%= current_user.first_name %></li></p>
+      <p><strong>Date of Birth:</strong> <%= current_user.birthday %>          <strong>Due Date:</strong> <%= current_user.due_date %></p>
   </div>
-</header>
+</div>
 
 <!-- Buttons to redirect to Recipe and Glucose Input pages -->
 <nav class="actions">
@@ -92,7 +87,7 @@
 <div class="progress">
   <h3>Current Progress</h3>
   <% if current_user.recordings.any? %>
-    <%= "Your current blood glucose level is #{current_user.latest_recording.blood_glucose}." %>
+    <%= "Your current blood glucose level is #{current_user.recordings.last}." %>
   <% else %>
     <%= "Please log your blood glucose reading to track your progress." %>
   <% end %>
