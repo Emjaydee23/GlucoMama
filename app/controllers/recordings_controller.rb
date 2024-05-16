@@ -2,8 +2,10 @@ class RecordingsController < ApplicationController
 
   def index
     @recordings = current_user.recordings.order(date: :desc)
-    @recordings_with_meal = current_user.recordings.order(date: :desc).where.not(ingredients: "")
-    @recordings_without_meal = current_user.recordings.order(date: :desc).where(ingredients: "")
+    @meal_recordings = current_user.recordings.order(date: :desc).where.not(ingredients: "")
+    @recordings_without_meal = current_user.recordings.order(date: :desc).where(ingredients: "").or(@recordings.where.not(ingredients: ""))
+    @searches = @recordings_without_meal.where(date: params[:query])
+    raise
   end
 
   def new
@@ -15,8 +17,8 @@ class RecordingsController < ApplicationController
     @recording.user = current_user
     if @recording.save
        # After submitting the form , details are submitted to index with all the BM and meal submissions of the last wek
-      redirect_to recordings_path
-      # redirect_to feedback_path
+      redirect_to feedback_path(@recording)
+
 
     else
       render :new, status: :unprocessable_entity
@@ -24,9 +26,11 @@ class RecordingsController < ApplicationController
     #Also redirected to the fedback page - personalised writing # Ruby if else logic will be in the html itself
   end
 
+
   def show
+    raise
     # @reading = Recording.find(params[:id]).reading
-    @reading = current_user.Recording.find(params[:id]).reading
+    @reading = Recording.find(params[:id]).reading
   end
 
   private

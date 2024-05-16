@@ -1,6 +1,26 @@
+<h2>Search here </h2>
 
+<div class="row justify-content-center" >
+  <div class="col-sm-8 my-3">
+    <%= form_tag recordings_path, method: :get, class: "d-flex" do %>
+       <%= label_tag "query", "Search Date:", class: "mr-2 mt-1" %>
+      <%= date_field_tag :query,
+            params[:query],
+            class: "form-control mr-2",
+            style: "width: 200px;",
+            placeholder: "YYYY-MM-DD"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
 
 <h1>See all Bloods </h1>
+
+<%= @searches.each do  %>
+<%# If I don't put a date , i'll see ALL entries%>
+<%# If i do put in a date , I put entries where date == query/what I entered %>
+
 
 <% @recordings_without_meal.each do |recording| %>
   <% if recording.reading > 5 %>
@@ -8,6 +28,7 @@
       <h6>Glucose:<strong style="color:green"><%=  recording.reading %></strong>mmol/L</h6>
       <h6>Date:<%=  recording.date %></h6>
       <h6>Time:<%=  recording.time %></h6>
+
     </div>
   <% elsif recording.reading >= 2 && recording.reading <= 4 %>
     <div>
@@ -27,13 +48,13 @@
 <%= link_to "Add New BM", new_recording_path %>
 <h1>See all Meals </h1>
 
-<% @recordings_with_meal.each do |recording| %>
+<% @meal_recordings.each do |recording| %>
 
     <div>
       <strong><h6>Meal:<%=  recording.ingredients %></h6></strong>
       <h6>Date:<%=  recording.date %></h6>
       <h6>Time:<%=  recording.time %></h6>
-      <%= link_to "Feedback", root_path %>
+
 
     </div>
 <% end %>
