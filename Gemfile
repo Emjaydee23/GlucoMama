@@ -51,9 +51,20 @@ gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 
+
+# Glucomama - Date picker gem install for add blood glucose form
+gem 'date_wrapper'
+
+#Addition: FOR THE CHART! DON'T REMOVE IF YOU WANT THE CHART!
+gem "chartkick"
+
+#Groupdate
+gem "groupdate"
+
 # Cloudinary
 
 gem "cloudinary"
+
 
 group :development, :test do
   gem "dotenv-rails"
