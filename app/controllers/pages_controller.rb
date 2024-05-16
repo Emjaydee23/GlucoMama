@@ -13,5 +13,12 @@ class PagesController < ApplicationController
   def about
   end
 
+  def patients
+  end
+
+  def profile
+
+  end
+
 
 end
