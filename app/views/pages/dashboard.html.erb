@@ -1,0 +1,50 @@
+<!-- dashboard.html.erb -->
+
+<!-- Introduction and Mini-Profile -->
+<div class="intro">
+  <h2>Welcome, <%= current_user.first_name %>!</h2>
+  <p>Tracking your glucose levels during pregnancy is crucial for a healthy you and your baby.</p>
+  <div class="mini-profile">
+    <p>Profile</p>
+    <ul>
+      <li>Name: <%= current_user.first_name %></li>
+      <li>Email: <%= current_user.email %></li>
+      <li>Date of brith: <%= current_user.birthday %></li>
+       <li>Due date:<%= current_user.due_date %></li>
+    </ul>
+  </div>
+</div>
+
+
+
+<!-- Buttons to redirect to Recipe and Glucose Input pages -->
+<div class="actions">
+<div class="calendar">
+  <h3>Calendar</h3>
+  <%# <%= calendar_tag %>
+<h3>Actions</h3>
+  <button><%= link_to "Explore Recipes", "#" %></button>
+  <button><%= link_to "Log Blood Glucose", "#" %></button>
+  <button><%= link_to "View Blood Glocose", "#" %></button>
+  </div>
+
+</div>
+
+<!-- Trends in BM -->
+<div class="trends">
+  <h3>Blood Glucose Trends</h3>
+  <!-- Chart or graph to display trends in BM readings -->
+  <%# <%= chart_data %>
+</div>
+
+<!-- Calendar to view the day -->
+
+<!-- Current Progress Widget -->
+<div class="progress">
+  <h3>Current Progress</h3>
+  <% if current_user.recordings.any? %>
+    <%= "Your current blood glucose level is #{current_user.latest_recording.blood_glucose}." %>
+  <% else %>
+    <%= "Please log your blood glucose reading to track your progress." %>
+  <% end %>
+</div>
