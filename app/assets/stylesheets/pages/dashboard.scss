@@ -1,4 +1,3 @@
-// Styling for Introduction and Mini-Profile section
 .intro {
   background-color: $pale;
   padding: 20px;
@@ -16,8 +15,10 @@
 
   .mini-profile {
     margin-top: 20px;
+
     ul {
       list-style-type: none;
+
       li {
         color: $bluepurple;
         margin-bottom: 5px;
@@ -82,4 +83,19 @@
   width: 50%;
   box-sizing: border-box;
   padding: 20px;
+}
+
+// CSS for .turbo-progress-bar
+.turbo-progress-bar {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #0076ff;
+  z-index: 9999;
+  transition:
+    width 300ms ease-out,
+    opacity 150ms 150ms ease-in;
+  transform: translate3d(0, 0, 0);
 }
