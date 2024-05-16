@@ -2,7 +2,6 @@
   background-color: $pale;
   padding: 20px;
   border-radius: 10px;
-  margin-bottom: 20px;
 
   h2 {
     color: $purple;
@@ -35,24 +34,38 @@
   }
 
   /* Positioning for right side */
-  float: right;
-  width: 50%;
-  box-sizing: border-box;
-  padding: 20px;
+  // float: right;
+  // width: 50%;
+  // box-sizing: border-box;
+  // padding: 20px;
 }
 
 // Styling for Buttons section
 .actions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0px 100px 50px 100px;
+  margin: 0px;
+
+
+  .left-side, .right-side {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-side {
+    // Styling for Trends in BM section
+    .current-progress {
+      margin-bottom: 20px;
+    }
+  }
+
   h3 {
     color: $purple;
     margin-bottom: 10px;
   }
 
-  /* Positioning for right side */
-  float: right;
-  width: 50%;
-  box-sizing: border-box;
-  padding: 20px;
 
   button {
     background-color: $yellowgluco;
@@ -70,20 +83,7 @@
   }
 }
 
-// Styling for Trends in BM section
-.trends,
-.progress {
-  h3 {
-    color: $purple;
-    margin-bottom: 10px;
-  }
 
-  /* Positioning for left side */
-  float: left;
-  width: 50%;
-  box-sizing: border-box;
-  padding: 20px;
-}
 
 // CSS for .turbo-progress-bar
 .turbo-progress-bar {
