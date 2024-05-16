@@ -56,7 +56,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_16_110502) do
   create_table "recordings", force: :cascade do |t|
     t.float "reading"
     t.date "date"
-    t.time "time"
+    t.string "time"
     t.string "ingredients"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
