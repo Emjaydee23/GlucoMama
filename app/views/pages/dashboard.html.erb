@@ -92,7 +92,7 @@
 <div class="progress">
   <h3>Current Progress</h3>
   <% if current_user.recordings.any? %>
-    <%= "Your current blood glucose level is #{current_user.latest_recording.blood_glucose}." %>
+    <%= "Your current blood glucose level is #{current_user.recordings.last}." %>
   <% else %>
     <%= "Please log your blood glucose reading to track your progress." %>
   <% end %>
