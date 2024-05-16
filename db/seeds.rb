@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-require "open-uri"
+
 
 # puts "Destroying data"
 
@@ -21,10 +21,10 @@ User.destroy_all
 puts "Creating Users"
 user = User.create(email: "test@test.com", password: 123456)
 
-puts "Creating Meals"
+puts "Show Meals and Recipes"
 
 # Seeds for meals in Breakfast category (4 items)
-file = URI.open("app/assets/images/breakfast/chia_pudding_b.jpeg")
+
 chia_pudding = Meal.new(name: "Overnight Chia pudding",
 note: "Delight in a guilt-free treat with our Overnight Chia Pudding, specially crafted for gestational diabetic women.
 This nutritious blend of chia seeds soaked overnight in creamy almond milk, sweetened with a hint of honey, and topped with fresh fruit offers a low glycemic index option, perfect for maintaining stable blood sugar levels.
@@ -41,12 +41,11 @@ Cover and set in the refrigerator overnight.
 If you can, stir the chia seed mixture a couple times after putting it in the refrigerator (after 30 minutes, after 1 hour).
 2) In the morning, give the chia seed pudding a good mix, breaking apart any clumps.
 3) Spoon into a bowl and top with few fresh raspberries. ",
-threshold: "above"
+threshold: "above",
+image:"https://www.theworktop.com/wp-content/uploads/2017/09/Chia-Seeds-in-Yogurt-3.jpg"
 )
-chia_pudding.photo.attach(io: file, filename: "chia_pudding_b.jpeg", content_type: "image/png")
-chia_pudding.save!
 
-file = URI.open("app/assets/images/breakfast/mushroom_spinach_egg_b.jpg")
+
 mushroom_egg = Meal.new(name: "Mushroom-Spinach scrambled eggs",
 note: "Kickstart your day with a savory and diabetic-friendly option like our Mushroom Spinach Scrambled Eggs.
 This hearty blend of fluffy scrambled eggs cooked with sautéed mushrooms and vibrant spinach leaves provides a protein-packed meal while keeping blood sugar levels in check.
@@ -67,11 +66,11 @@ Instructions:
 3) Add onions and cook until tender and golden, 3 to 4 minutes.
 4) Add the mushrooms and cook and stir 3-4 minutes or until tender. Add spinach; cook and stir until wilted.
 5) Add egg mixture; cook and stir just until eggs are thickened and no liquid egg remains. If you want to add cheese, add it with the eggs",
-threshold: "below")
-mushroom_egg.photo.attach(io: file, filename: "mushroom_spinach_egg_b.jpg", content_type: "image/png")
-mushroom_egg.save!
+threshold: "below",
+image:"https://www.skinnytaste.com/wp-content/uploads/2022/01/Mushroom-Spinach-Scrambled-Eggs-5.jpg")
 
-file = URI.open("app/assets/images/breakfast/vege_tofu_scramble_b.jpg")
+
+
 tofu_scramble = Meal.new(name: "Tofu Scramble with Vegetables",
 note: "Experience a satisfying and diabetic-friendly plant-based delight with our Tofu Scramble with Vegetables.
 Crafted to meet the dietary needs of gestational diabetic women, this wholesome blend of crumbled tofu and colorful sautéed vegetables offers a protein-rich alternative to traditional scrambled eggs.
@@ -96,11 +95,11 @@ Instructions:
 5) Let cook for 2 to 3 minutes. Transfer to a dish and set aside.
 6) Cook red peppers with some oil, salt and pepper in the same pan for 5 minutes.
 7) Add the cooked red peppers with the rest of the vegetables to tofu scramble and enjoy!",
-threshold: "below")
-tofu_scramble.photo.attach(io: file, filename: "vege_tofu_scramble_b.jpg", content_type: "image/png")
-tofu_scramble.save!
+threshold: "below",
+image:"https://eatsomethingvegan.com/wp-content/uploads/2021/07/Veggie-Tofu-Breakfast-Skillet-2.jpg")
 
-file = URI.open("app/assets/images/breakfast/spinach_feta_omlette_b.jpg")
+
+
 spinach_omlette = Meal.new(name: "Spinach Feta Omelette with Toast",
 note: "Indulge in a gourmet breakfast while managing gestational diabetes with our Spinach Feta Omelette with Toast.
 This mouthwatering combination of fluffy eggs, sautéed spinach, and creamy feta cheese provides a satisfying meal without compromising blood sugar levels.
@@ -122,12 +121,12 @@ Instructions:
 5) Sprinkle feta cheese on top of the omelette and fold in half.
 6) Toast the whole grain bread.
 7) Serve the omelette with the toast on the side.",
-threshold: "above")
-spinach_omlette.photo.attach(io: file, filename: "spinach_feta_omlette_b.jpg", content_type: "image/png")
-spinach_omlette.save!
+threshold: "above",
+image:"https://images.squarespace-cdn.com/content/v1/62d61e7ece25bb77f9eef8a8/d6b6e515-327d-4718-9708-1522e5771b04/Spinach+and+feta+omelette+with+wholemeal+toast.jpg?format=1500w")
+
 
 # Seeds for meals in Lunch category (4 items)
-file = URI.open("app/assets/images/lunch/chicken_vege_rice_l.jpg")
+
 chicken_veg = Meal.new(name: "Chicken, Vegetable, and Brown Rice",
 note: "Savor the wholesome goodness of our Chicken, Vegetable, and Brown Rice dish, thoughtfully crafted with the health needs of gestational diabetic women in mind.
 Tender chicken breast, colorful vegetables, and nutrient-rich brown rice come together in a flavorful medley that's low in glycemic index, providing sustained energy without spiking blood sugar levels.
@@ -150,11 +149,11 @@ Instructions:
 5) Bring a pan of water to the boil and add a pinch of salt. Add the carrots.
 6) Once carrots begin to soften (around 5 minutes), add the broccoli and continue cooking for 3-4 more minutes until tender.
 7) Drain the veg and mix with the cooked rice. Season well with salt, pepper and a little garlic powder.",
-threshold: "below")
-chicken_veg.photo.attach(io: file, filename: "chicken_vege_rice_l.jpg", content_type: "image/png")
-chicken_veg.save!
+threshold: "below",
+image:"app/assets/images/lunch/chicken_vege_rice_l.jpg")
 
-file = URI.open("app/assets/images/lunch/roasted_vege_salad_l.jpg")
+
+
 vege_salad = Meal.new(name: "Roasted Vegetables, Chickpea, and Quinoa Salad",
 note: " Elevate your dining experience with our Roasted Vegetables, Chickpea, and Quinoa Salad, a vibrant and diabetes-friendly option perfect for expecting mothers.
 Roasted seasonal vegetables, protein-packed chickpeas, and wholesome quinoa combine to create a satisfying salad bursting with flavor and nutrients.
@@ -179,11 +178,11 @@ Cover and cook for 15 minutes until the quinoa is tender and has absorbed most o
 When cooked, the sprout or 'tail' will pop out of each quinoa seed. Remove from the heat and leave for 5 minutes before straining off any excess stock. Fluff up the quinoa with a fork.
 3. Mix together the quinoa, roasted vegetables (reserving the oil left in the roasting tin), chickpeas and avocado in a serving bowl.
 4. Whisk the dressing ingredients with the reserved oil from the roasting tin and gently toss with the salad. Serve warm.",
-threshold: "above")
-vege_salad.photo.attach(io: file, filename: "roasted_vege_salad_l.jpg", content_type: "image/png")
-vege_salad.save!
+threshold: "above",
+image:"https://www.deliciousmagazine.co.uk/wp-content/uploads/2020/02/069-roasted-vegetable-salad-768x960.jpg")
 
-file = URI.open("app/assets/images/lunch/red_lentil_soup_l.jpg")
+
+
 lentil_soup = Meal.new(name: "Red Lentil and Zucchini Soup",
 note: " Warm your soul with our comforting Red Lentil and Zucchini Soup, a hearty option ideal for gestational diabetic women seeking a nourishing and balanced meal.
 Made with wholesome ingredients like red lentils, zucchini, and aromatic spices, this flavorful soup is rich in fiber and protein while being low on the glycemic index.
@@ -214,11 +213,11 @@ Make sure that the pot is off of the heat so that the puree doesn’t splatter.
 7. Bring to a boil and reduce the heat to low.
 8. Cook the soup stirring often, until the lentils start to break down. About 25-30 minutes. Add more liquid if needed.
 9. Taste and adjust seasoning if needed. Serve with a dollop of yogurt, sliced scallions, and lemon wedges. Enjoy!",
-threshold: "above")
-lentil_soup.photo.attach(io: file, filename: "red_lentil_soup_l.jpg", content_type: "image/png")
-lentil_soup.save!
+threshold: "above",
+image:"app/assets/images/lunch/red_lentil_soup_l.jpg")
 
-file = URI.open("app/assets/images/lunch/roasted_sweet_potato_salad_l.jpg")
+
+
 sweet_potato = Meal.new(name: "Roasted Sweet Potatoes and Chickpea Salad",
 note: "Treat yourself to a delicious and nutritious meal with our Roasted Sweet Potatoes and Chickpea Salad, specially tailored for gestational diabetic women.
 Oven-roasted sweet potatoes and hearty chickpeas mingle with fresh greens and a zesty dressing to create a satisfying salad that's both filling and diabetes-friendly.
@@ -252,13 +251,12 @@ Return to oven and cook for 10-15 minutes more or until sweet potatoes are tende
 Thin with hot water until pourable. Taste and adjust seasonings as needed. Set aside.
 6. Once the potatoes and chickpeas are done roasting, let cool for a few minutes. To serve, divide chard or massaged* kale between serving dishes and top with sweet potatoes, chickpeas, and pumpkin seeds (optional).
 Serve with dressing on the side. Best when fresh, though leftovers will keep covered separately for 2-3 days.",
-threshold: "below")
-sweet_potato.photo.attach(io: file, filename: "roasted_sweet_potato_salad_l.jpg", content_type: "image/png")
-sweet_potato.save!
+threshold: "below",
+image:"https://minimalistbaker.com/wp-content/uploads/2015/08/10-ingredient-HEALTHY-Sweet-Potato-Crispy-Chickpea-Salad-with-a-CREAMY-Tahini-Dressing-So-easy-so-delicious-vegan-glutenfree-salad-recipe-healthy-dinner.jpg")
+
 
 # Seeds for meals in Dinner category (4 items)
 
-file = URI.open("app/assets/images/dinner/chicken_green_salad_l.jpg")
 chicken_salad = Meal.new(name: "Grilled Chicken and Mixed Green Salad",
 note: "Elevate your dining experience with our Grilled Chicken and Mixed Green Salad, a refreshing and diabetes-friendly option perfect for expectant mothers.
 Juicy grilled chicken breast, crisp mixed greens, and an assortment of colorful vegetables come together to create a vibrant and nutritious salad.
@@ -288,11 +286,11 @@ Mix well with a whisk or shake in a jar until well combined.
 5) Assemble your salad. In a bowl, place your washed salad greens, cucumber and bell pepper slices, halved cherry tomatoes, carrot sticks and a tablespoon of canned corn.
 Add chicken bites.
 6) Top the salad with some shaved parmesan cheese and the balsamic dressing.",
-threshold: "above")
-chicken_salad.photo.attach(io: file, filename: "chicken_green_salad_l.jpg", content_type: "image/png")
-chicken_salad.save!
+threshold: "above",
+image:"app/assets/images/dinner/chicken_green_salad_l.jpg")
 
-file = URI.open("app/assets/images/dinner/salmon_asparag_quinoa_d.jpg")
+
+
 salmon_asparagus = Meal.new(name: "Salmon and Grilled Asparagus with Quinoa:",
 note: "Indulge in a flavorful and nutritious meal designed with the health of gestational diabetic women in mind.
 Our Salmon and Grilled Asparagus with Quinoa dish offers a perfect balance of protein, healthy fats, and complex carbohydrates.
@@ -310,11 +308,11 @@ Instructions:
 2. Midway through cooking the salmon, add the asparagus mixed with olive oil, salt, and pepper to the oven.
 3. Simmer the quinoa with water just above the top, covered, for 10 minutes.
 4. Assemble on a plate.",
-threshold: "below")
-salmon_asparagus.photo.attach(io: file, filename: "salmon_asparag_quinoa_d.jpg", content_type: "image/png")
-salmon_asparagus.save!
+threshold: "below",
+image:"app/assets/images/dinner/salmon_asparag_quinoa_d.jpg")
 
-file = URI.open("app/assets/images/dinner/tofu_vege_curry_l.jpg")
+
+
 tofu_curry = Meal.new(name: "Tofu and Vegetable Curry",
 note: "Experience the exotic flavors of our Tofu and Vegetable Curry, tailored to meet the dietary needs of gestational diabetic women.
 This aromatic and diabetes-friendly dish features protein-rich tofu simmered in a fragrant blend of spices, paired with an array of colorful vegetables.
@@ -340,11 +338,11 @@ Reduce to simmer and cook for 20 minutes.
 3. Place the soup, in batches, in a blender or food processor, or using an immersion blender, puree the soup until smooth.
 4. Return to the pot and bring to a boil. Reduce to simmer and add the tofu and kale. Cook for 5 minutes. Add salt to taste.
 5. Either mix the rice directly into the soup, or serve the rice on the side. Serve hot.",
-threshold: "below")
-tofu_curry.photo.attach(io: file, filename: "tofu_vege_curry_l.jpg", content_type: "image/png")
-tofu_curry.save!
+threshold: "below",
+image:"https://parsleyinmyteeth.com/wp-content/uploads/2015/08/Vegetable-Curry-with-Tofu-Kale-Brown-Rice-from-Parsley-In-My-Teeth-1024x683.jpg")
 
-file = URI.open("app/assets/images/dinner/vegan_chickpea_stew_l.jpg")
+
+
 chickpea_stew = Meal.new(name: "Vegan Chickpea Stew",
 note: "Delight in a hearty and diabetes-friendly meal with our Vegan Chickpea Stew, thoughtfully crafted for gestational diabetic women seeking nutritious and flavorful options.
 This comforting stew boasts tender chickpeas simmered with an assortment of vegetables and aromatic herbs, creating a rich and satisfying dish that's both low in glycemic index and high in fiber.
@@ -377,14 +375,14 @@ Simmer for about 15-25 minutes for the stew to thicken and for the excess moistu
 Give the stew a good stir from time to time.
 7. Once the sauce thickens, taste it and season with a generous amount of black pepper, more salt if needed, chilli flakes (if your harissa is quite mild).
 8. Finally, stir in cooked chickpeas and let them warm through. Serve topped with chopped coriander  if you wish.",
-threshold: "above")
-chickpea_stew.photo.attach(io: file, filename: "vegan_chickpea_stew_l.jpg", content_type: "image/png")
-chickpea_stew.save!
+threshold: "above",
+image:"https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2017/11/vegan-chickpea-stew-lablabi-lunch-800x1200.jpg")
+
 
 
 # Seeds for meals in Snacks category (4 items)
 
-file = URI.open("app/assets/images/snack/apple_slices_almond_butter.jpg")
+
 apple_almond = Meal.new(name: "Apple Slices with Almond Butter",
 note: "Treat yourself to a delightful snack that's both satisfying and blood sugar-friendly.
 Our Apple Slices with Almond Butter offer a perfect balance of sweetness from crisp apple slices paired with the creamy richness of almond butter.
@@ -398,11 +396,11 @@ Instructions:
 1. Combine the apple slices and lemon juice in a zip-close bag and toss.
 2. Remove apples from bag and arrange them in a circle on a small plate.
 3. Scoop the almond/peasnut butter in a small bowl and place in the centre of the dish.",
-threshold: "above")
-apple_almond.photo.attach(io: file, filename: "apple_slices_almond_butter.jpg", content_type: "image/png")
-apple_almond.save!
+threshold: "above",
+image:"app/assets/images/snack/apple_slices_almond_butter.jpg")
 
-file = URI.open("app/assets/images/snack/greek_yoghurt_with_berries_s.jpg")
+
+
 greek_yoghurt = Meal.new(name: "Greek Yogurt with Berries",
 note: "Indulge in a creamy and diabetes-friendly treat with our Greek Yogurt with Berries, specially curated for expectant mothers managing gestational diabetes.
 Creamy Greek yogurt topped with a medley of fresh berries provides a burst of flavor and essential nutrients, including protein, calcium, and antioxidants.
@@ -416,11 +414,11 @@ Instructions:
 1) Place all of the yogurt in a bowl.
 2) Wash and slice your berries, place on top of the yogurt.
 3) Enjoy as an amazing breakfast!",
-threshold: "below")
-greek_yoghurt.photo.attach(io: file, filename: "greek_yoghurt_with_berries_s.jpg", content_type: "image/png")
-greek_yoghurt.save!
+threshold: "below",
+image:"app/assets/images/snack/greek_yoghurt_with_berries_s.jpg")
 
-file = URI.open("app/assets/images/snack/cheese_s.jpg")
+
+
 cheddar = Meal.new(name: "Cheddar Cheese",
 note: "Enjoy the rich and savory goodness of Cheddar Cheese as a wholesome and blood sugar-friendly snack option for gestational diabetic women.
 Packed with protein and calcium, cheddar cheese provides a satisfying and nutritious snack choice that helps regulate blood sugar levels and supports fetal development during pregnancy.
@@ -430,11 +428,11 @@ recipe:"Ingredients:
 - 30g of cheddar cheese cubed
 Instructions:
 1) snack on cubed cheddar cheese inbetween your meals ( feel free to alternate between other hard cheese too)",
-threshold: "below")
-cheddar.photo.attach(io: file, filename: "cheese_s.jpg", content_type: "image/png")
-cheddar.save!
+threshold: "below",
+image:"app/assets/images/snack/cheese_s.jpg")
 
-file = URI.open("app/assets/images/snack/boiled_egg_s.jpg")
+
+
 boiled_egg = Meal.new(name: "Boiled Egg & Cucumber",
 note: "Nourish your body with a simple yet satisfying snack that's perfect for gestational diabetic women.
 Our Boiled Egg and Cucumber combination offers a protein-rich and low-glycemic option that's ideal for managing blood sugar levels during pregnancy.
@@ -448,6 +446,5 @@ recipe:"Ingredients:
 Instructions:
 1) boil 2 eggs and deshell it and place it on the plate
 2) add sliced cucumbers to plate",
-threshold: "above")
-boiled_egg.photo.attach(io: file, filename: "boiled_egg_s.jpg", content_type: "image/png")
-boiled_egg.save!
+threshold: "above",
+image:"app/assets/images/snack/boiled_egg_s.jpg")
