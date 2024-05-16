@@ -5,7 +5,7 @@ class RecordingsController < ApplicationController
     @meal_recordings = current_user.recordings.order(date: :desc).where.not(ingredients: "")
     @recordings_without_meal = current_user.recordings.order(date: :desc).where(ingredients: "").or(@recordings.where.not(ingredients: ""))
     @searches = @recordings_without_meal.where(date: params[:query])
-    raise
+
   end
 
   def new
