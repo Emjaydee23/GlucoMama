@@ -9,9 +9,6 @@
 #   end
 
 
-# puts "Destroying data"
-
-
 puts "Destroying data"
 
 Meal.destroy_all
@@ -448,3 +445,4 @@ Instructions:
 2) add sliced cucumbers to plate",
 threshold: "above",
 image:"app/assets/images/snack/boiled_egg_s.jpg")
+>>>>>>> 6ff79a9d5d32743d4d222ae901298d751384d07e
