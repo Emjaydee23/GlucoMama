@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'recipes/index'
+  # get 'recipes/index'
   resources :recordings
   devise_for :users
   root to: "pages#home"
   get "dashboard", to: "pages#dashboard"
-  get 'recipes', to: 'recipes#index'
+  get 'meals', to: 'meals#index'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
