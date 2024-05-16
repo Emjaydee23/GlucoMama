@@ -15,18 +15,32 @@
   </div>
 </div>
 
+<% @searches.each do |search| %>
+
+  <% if search.reading > 5 %>
+    <div>
+      <h6>BM:<strong style="color:red"><%=  search.reading %></strong>mmol/L</h6>
+  <% elsif search.reading >= 2 && search.reading <= 4 %>
+    <h6>BM:<strong style="color:green"><%=  search.reading %></strong>mmol/L</h6>
+  <% elsif search.reading < 2 %>
+    <h6>BM:<strong style="color:red"><%=  search.reading %></strong>mmol/L</h6>
+  <% end %>
+
+  <h6>Timing:<%= search.time %></h6>
+  <h6>Meal details?<%= search.ingredients %></h6>
+<% end %>
+
 <h1>See all Bloods </h1>
 
-<% @searches.each do  %>
-<% end %>
+
 <%# If I don't put a date , i'll see ALL entries%>
 <%# If i do put in a date , I put entries where date == query/what I entered %>
 
 
-<% @recordings_without_meal.each do |recording| %>
+<% @blood_glucose_recordings.each do |recording| %>
   <% if recording.reading > 5 %>
     <div>
-      <h6>Glucose:<strong style="color:green"><%=  recording.reading %></strong>mmol/L</h6>
+      <h6>Glucose:<strong style="color:red"><%=  recording.reading %></strong>mmol/L</h6>
       <h6>Date:<%=  recording.date %></h6>
       <h6>Time:<%=  recording.time %></h6>
 
