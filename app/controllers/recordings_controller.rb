@@ -1,10 +1,11 @@
 class RecordingsController < ApplicationController
 
   def index
+    @user = current_user
     @recordings = current_user.recordings.order(date: :desc)
     @meal_recordings = current_user.recordings.order(date: :desc).where.not(ingredients: "")
-    @recordings_without_meal = current_user.recordings.order(date: :desc).where(ingredients: "").or(@recordings.where.not(ingredients: ""))
-    @searches = @recordings_without_meal.where(date: params[:query])
+    @blood_glucose_recordings = current_user.recordings.order(date: :desc).where(ingredients: "").or(@recordings.where.not(ingredients: ""))
+    @searches = @blood_glucose_recordings.where(date: params[:query])
 
   end
 
@@ -28,7 +29,6 @@ class RecordingsController < ApplicationController
 
 
   def show
-    raise
     # @reading = Recording.find(params[:id]).reading
     @reading = Recording.find(params[:id]).reading
   end

@@ -1,69 +1,105 @@
-<h2>Search here </h2>
+<div class="px-5 mx-5">
 
-<div class="row justify-content-center" >
-  <div class="col-sm-8 my-3">
-    <%= form_tag recordings_path, method: :get, class: "d-flex" do %>
-       <%= label_tag "query", "Search Date:", class: "mr-2 mt-1" %>
-      <%= date_field_tag :query,
-            params[:query],
-            class: "form-control mr-2",
-            style: "width: 200px;",
-            placeholder: "YYYY-MM-DD"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+
+  <h2><%= @user.email %>'s Review</h2>
+
+  <%# Searchbar %>
+  <div class="row justify-content-center" >
+    <div class="col-sm-8 my-3">
+      <%= form_tag recordings_path, method: :get, class: "d-flex" do %>
+        <%= label_tag "query", "Search Date:", class: "mr-2 mt-1" %>
+        <%= date_field_tag :query,
+              params[:query],
+              class: "form-control mr-2",
+              style: "width: 200px;",
+              placeholder: "YYYY-MM-DD"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row m-0">
+    <% @searches.each do |search| %>
+      <div class="col-12 col-sm-6 col-md-3 mb">
+        <div class="card">
+          <% if search.reading > 5 %>
+            <div>
+              <h6>BM:<strong style="color:red"><%=  search.reading %></strong>mmol/L</h6>
+          <% elsif search.reading >= 2 && search.reading <= 4 %>
+            <h6>BM:<strong style="color:green"><%=  search.reading %></strong>mmol/L</h6>
+          <% elsif search.reading < 2 %>
+            <h6>BM:<strong style="color:red"><%=  search.reading %></strong>mmol/L</h6>
+          <% end %>
+          <h6>Timing:<%= search.time %></h6>
+          <h6>Meal details?<%= search.ingredients %></h6>
+        </div>
+      </div>
     <% end %>
   </div>
-</div>
-
-<h1>See all Bloods </h1>
-
-<% @searches.each do  %>
-<% end %>
-<%# If I don't put a date , i'll see ALL entries%>
-<%# If i do put in a date , I put entries where date == query/what I entered %>
 
 
-<% @recordings_without_meal.each do |recording| %>
-  <% if recording.reading > 5 %>
-    <div>
-      <h6>Glucose:<strong style="color:green"><%=  recording.reading %></strong>mmol/L</h6>
-      <h6>Date:<%=  recording.date %></h6>
-      <h6>Time:<%=  recording.time %></h6>
 
-    </div>
-  <% elsif recording.reading >= 2 && recording.reading <= 4 %>
-    <div>
-      <h6>Glucose:<strong style="color:orange"><%=  recording.reading %></strong> mmol/L</h6>
-      <h6>Date:<%=  recording.date %></h6>
-      <h6>Time:<%=  recording.time %></h6>
-    </div>
-  <% elsif recording.reading < 2 %>
-    <div>
-      <h6>Glucose:<strong style="color:red"><%=  recording.reading %></strong>mmol/L</h6>
-      <h6>Date:<%=  recording.date %></h6>
-      <h6>Time:<%=  recording.time %></h6>
-    </div>
+
+
+
+
+
+
+
+  <h1>See all Bloods </h1>
+
+  <%= link_to "Add New BM", new_recording_path %>
+
+  <%# If I don't put a date , i'll see ALL entries%>
+  <%# If i do put in a date , I put entries where date == query/what I entered %>
+
+  <div class="row m-0">
+    <% @blood_glucose_recordings.each do |recording| %>
+      <div class="col-12 col-sm-6 col-md-3 mb-3">
+        <div class="card">
+          <% if recording.reading > 5 %>
+            <div>
+              <h6>Glucose:<strong style="color:red"><%=  recording.reading %></strong>mmol/L</h6>
+              <h6>Date:<%=  recording.date %></h6>
+              <h6>Time:<%=  recording.time %></h6>
+
+            </div>
+          <% elsif recording.reading >= 2 && recording.reading <= 4 %>
+            <div>
+              <h6>Glucose:<strong style="color:orange"><%=  recording.reading %></strong> mmol/L</h6>
+              <h6>Date:<%=  recording.date %></h6>
+              <h6>Time:<%=  recording.time %></h6>
+            </div>
+          <% elsif recording.reading < 2 %>
+            <div>
+              <h6>Glucose:<strong style="color:red"><%=  recording.reading %></strong>mmol/L</h6>
+              <h6>Date:<%=  recording.date %></h6>
+              <h6>Time:<%=  recording.time %></h6>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%# <h1>See all Meals </h1>
+
+  <% @meal_recordings.each do |recording| %>
+
+      <%# <div>
+        <strong><h6>Meal:<%=  recording.ingredients </h6></strong>
+        <%# <h6>Date:<%=  recording.date </h6>
+        <%# <h6>Time:<%=  recording.time </h6>
+
+
+      </div>
   <% end %>
-<% end %>
-
-<%= link_to "Add New BM", new_recording_path %>
-<h1>See all Meals </h1>
-
-<% @meal_recordings.each do |recording| %>
-
-    <div>
-      <strong><h6>Meal:<%=  recording.ingredients %></h6></strong>
-      <h6>Date:<%=  recording.date %></h6>
-      <h6>Time:<%=  recording.time %></h6>
 
 
-    </div>
-<% end %>
+  <%# <h1>Image here </h1> %>
+  <%# <%= line_chart @time.map { |t|
+      {name: t.value, data: t.feats.group_by_day(:reading).count}
+  } %>
 
-
-<h1>Image here </h1>
-<%# <%= line_chart @time.map { |t|
-    {name: t.value, data: t.feats.group_by_day(:reading).count}
-} %>
-
-<%= link_to "Back to Homepage", root_path %>
+  <%= link_to "Back to Dashboard", dashboard_path %>
