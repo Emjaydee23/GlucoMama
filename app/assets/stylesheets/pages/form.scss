@@ -1,0 +1,23 @@
+// This is the SCSS for the blood form page
+.form{
+  background-color:#A58AC8;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.heading{
+  color:black;
+  text-align:center;
+}
+
+.button{
+  color:black;
+  background-color: #f87baf;
+  border-radius: 5px;
+  border-color:#f87baf ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+
+}
