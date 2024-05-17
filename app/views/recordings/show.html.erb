@@ -3,11 +3,11 @@
 
 <h4> You have recorded having a BM of <%= @reading  %> </h4>
 <% if @reading > 4  %>
-  <p>Your value is a bit on the high side- here's some recipes we'd like to recommend , based on your BM input. <%= link_to "See Recipes", root_path %></p>
+  <p>Your value is a bit on the high side- here's some recipes we'd like to recommend , based on your BM input. <%= link_to "See Meals", root_path %></p>
 <% elsif @reading >= 2 && @reading <= 4   %>
-  <p>Your value is normal! Well done Mama! Keep up the good work- If you want to have a look at some recipes, here are some that could inspire you <%= link_to "See Recipes", root_path %></p>
+  <p>Your value is normal! Well done Mama! Keep up the good work- If you want to have a look at some recipes, here are some that could inspire you <%= link_to "See Meals", root_path %></p>
 <% elsif @reading < 2  %>
-  <p>Your value is a bit on the low side- here's some recipes we'd like to recommend , based on your BM input. <%= link_to "See Recipes", root_path %></p>
+  <p>Your value is a bit on the low side- here's some recipes we'd like to recommend , based on your BM input. <%= link_to "See Meals", root_path %></p>
 <% end  %>
 <%= link_to "Back to Homepage", root_path %>
 <%= link_to "See All Trends", recordings_path %>
