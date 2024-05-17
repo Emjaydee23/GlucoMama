@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @user = User.all
     @recordings = Recording.all
     @meals = Meal.all
     @results = Result.all

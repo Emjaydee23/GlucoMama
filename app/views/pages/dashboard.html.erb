@@ -89,6 +89,7 @@
         </ul>
 
     </div>
+
     <div class="buttons">
       <h3>Actions</h3>
       <%= button_to "Explore Recipes", "#", class: "btn" %>
@@ -97,3 +98,17 @@
     </div>
   </div>
 </div>
+
+<h1>See your patients</h2>
+
+<% @user.each do |u|  %>
+<%# <% if u.clinician == false %>
+<div class="patient-card-container" style="border: solid;">
+  <h6>Name:<%= u.first_name %></h6>
+  <h6>Surname:<%= u.last_name %></h6>
+  <h6>D.O.B:<%= u.birthday %></h6>
+  <h6>Due Date:<%= u.due_date %></h6>
+  <%= link_to "See Profile", root_path %>
+</div>
+<%# <% end  %>
+<% end  %>

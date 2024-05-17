@@ -4,22 +4,56 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :first_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "given-name" } %>
+    <%= f.input :last_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "family-name" } %>
+    <%= f.label :birthday, "Please enter your birthday:", required: true %>
+    <%= f.date_field :birthday,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "bday" } %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                input_html: { autocomplete: "email" } %>
     <%= f.input :password,
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :clinician, as: :boolean, label: "Please tick if you are a clinician:", input_html: { id: "clinician-checkbox" } %>
+    <%= f.label :due_date, "Please enter your due date:", required: false %>
+    <%= f.date_field :due_date,
+                required: false,
+                autofocus: true,
+                input_html: { id: "due-date-input", autocomplete: "off" } %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var clinicianCheckbox = document.getElementById("clinician-checkbox");
+    var dueDateInput = document.getElementById("due-date-input");
+
+    function toggleDueDateRequirement() {
+      if (clinicianCheckbox.checked) {
+        dueDateInput.removeAttribute("required");
+      } else {
+        dueDateInput.setAttribute("required", "required");
+      }
+    }
+
+    clinicianCheckbox.addEventListener("change", toggleDueDateRequirement);
+    toggleDueDateRequirement(); // Initial call to set the correct state on load
+  });
+</script>
 
 <%= render "devise/shared/links" %>

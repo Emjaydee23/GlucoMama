@@ -20,8 +20,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  # For the clinician- Have to validate these pages somehow- TBC
-  get 'dashboard/patients', to: 'pages#show', as: :patient_dashboard
+  # For the clinician only!- Have to validate somehow
   get 'dashboard/patients/:id', to: 'pages#show', as: :patient_profile
   get 'dashboard/patients/:id/chatroom', to: 'pages#show' , as: :chatroom
 end
