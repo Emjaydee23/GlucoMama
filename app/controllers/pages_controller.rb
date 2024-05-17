@@ -14,7 +14,7 @@ class PagesController < ApplicationController
   def about
   end
 
-  def patients
+  def show
   end
 
   def profile

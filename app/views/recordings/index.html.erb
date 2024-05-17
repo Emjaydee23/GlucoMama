@@ -1,4 +1,4 @@
-<h2>Search here </h2>
+<h2><%= @user.email %>'s Review</h2>
 
 <div class="row justify-content-center" >
   <div class="col-sm-8 my-3">
@@ -31,7 +31,7 @@
 <% end %>
 
 <h1>See all Bloods </h1>
-
+<%= link_to "Add New BM", new_recording_path %>
 
 <%# If I don't put a date , i'll see ALL entries%>
 <%# If i do put in a date , I put entries where date == query/what I entered %>
@@ -60,24 +60,24 @@
   <% end %>
 <% end %>
 
-<%= link_to "Add New BM", new_recording_path %>
-<h1>See all Meals </h1>
+
+<%# <h1>See all Meals </h1>
 
 <% @meal_recordings.each do |recording| %>
 
-    <div>
-      <strong><h6>Meal:<%=  recording.ingredients %></h6></strong>
-      <h6>Date:<%=  recording.date %></h6>
-      <h6>Time:<%=  recording.time %></h6>
+    <%# <div>
+      <strong><h6>Meal:<%=  recording.ingredients </h6></strong>
+      <%# <h6>Date:<%=  recording.date </h6>
+      <%# <h6>Time:<%=  recording.time </h6>
 
 
     </div>
 <% end %>
 
 
-<h1>Image here </h1>
+<%# <h1>Image here </h1> %>
 <%# <%= line_chart @time.map { |t|
     {name: t.value, data: t.feats.group_by_day(:reading).count}
 } %>
 
-<%= link_to "Back to Homepage", root_path %>
+<%= link_to "Back to Dashboard", dashboard_path %>

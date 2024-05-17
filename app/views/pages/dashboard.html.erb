@@ -99,16 +99,18 @@
   </div>
 </div>
 
-<h1>See your patients</h2>
+<%# This is for the consultant- I have CODED THIS OUT BECAUSE NOT NEEDED FOR DEMO DAY! %>
 
-<% @user.each do |u|  %>
-<%# <% if u.clinician == false %>
-<div class="patient-card-container" style="border: solid;">
+<%# <h1>See your patients</h2> %>
+
+<%#<% @user.each do |u|  %>
+ <%# <% if u.clinician == false %>
+<%# <div class="patient-card-container" style="border: solid;">
   <h6>Name:<%= u.first_name %></h6>
-  <h6>Surname:<%= u.last_name %></h6>
-  <h6>D.O.B:<%= u.birthday %></h6>
-  <h6>Due Date:<%= u.due_date %></h6>
-  <%= link_to "See Profile", root_path %>
+    <%# <h6>Surname:<%= u.last_name %></h6>
+    <%# <h6>D.O.B:<%= u.birthday %></h6>
+    <%# <h6>Due Date:<%= u.due_date %></h6>
+    <%# <%= link_to "See Profile", search_path %>
 </div>
 <%# <% end  %>
-<% end  %>
+<%# <% end  %>
