@@ -16,14 +16,14 @@ Rails.application.routes.draw do
 
 
   # All about BM recordings
-  resources :recordings
+  resources :recordings, except: :edit
 
   # get 'recordings/:id', to: 'recordings#new', as: :new_recording -> to rename it so can rediect to edit form when click the button
   post 'recordings/:id', to: 'recordings#create'
   # get 'recordings/:id', to: 'recordings#edit', as: :edit_recording
   get 'recordings/:id/feedback', to: 'recordings#show', as: :feedback # A feedback show page that changes it's personalised message , depending on BM results
   get 'recordings', to: 'recordings#index', as: :search # This is for the searchbar - get request for items (bloods and meals) that match a certain condition (i.e. the date user input)
-  # get 'recordings/:id/edit', to: 'recordings#edit', as: :edit_recording # Edit your blood glucose entry if user had made a mistake
+  get 'recordings/:id/edit', to: 'recordings#edit', as: :edit # Edit your blood glucose entry if user had made a mistake
   patch 'recordings/:id', to: 'recordings#update' # Update your entry, given your details that were previously there( present in the form), to change
   delete 'recordings/:id', to: 'recordings#destroy' # Delete your BM entry
 

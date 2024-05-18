@@ -9,6 +9,11 @@ class RecordingsController < ApplicationController
 
   end
 
+  def show
+    # @reading = Recording.find(params[:id]).reading
+    @reading = Recording.find(params[:id]).reading
+  end
+
   def new
     @recording = Recording.new
   end
@@ -37,11 +42,14 @@ class RecordingsController < ApplicationController
     #Also redirected to the fedback page - personalised writing # Ruby if else logic will be in the html itself
   end
 
-
-  def show
-    # @reading = Recording.find(params[:id]).reading
-    @reading = Recording.find(params[:id]).reading
+  def destroy
+    @recording = Recording.find(params[:id])
+    @recording.destroy
+    redirect_to search_path, status: :see_other
   end
+
+
+
 
   private
   def recording_params

@@ -2,15 +2,19 @@
 
 <div class="form container w-50">
 <%= simple_form_for(@recording) do |f| %>
-  <h1 class="heading info">Add Blood Glucose</h1>
+  <h1 class="heading info">Edit Blood Glucose</h1>
 
   <%= f.input :reading, label: 'Please type in your BM (mmol/l):', size: "70x5" %>
   <%= f.label :date %>
   <%= f.date_field :date %>
   <%= f.input :time, :collection => ["BB(Before Breakfast)","AB(After Breakfast)" ,"AL(After Lunch)", "AD(After Dinner)"],  label: 'When was your glucose reading taken?', error: 'Timing is mandatory, please specify one', input_html: { maxlength: 200 } %>
-  <h1 class="heading">Add Meal</h1>
+  <h1 class="heading">Edit Meal</h1>
   <%= f.input :ingredients, as: :text, input_html: {rows: 50, cols: 100}, label: 'Describe what meal you had and describe quantity ', error: 'Please noted down your meal and give information on your meal', input_html: { maxlength: 200 } %>
-  <button class="button"><%= f.button :submit, 'Update' %></button>
+  <button class="button"><%= f.button :submit, 'Edit' %></button>
+  <%= link_to "Delete",
+  recording_path(@recording),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
 <% end %>
 
 
