@@ -13,6 +13,16 @@ class RecordingsController < ApplicationController
     @recording = Recording.new
   end
 
+  def edit
+    @recording = Recording.find(params[:id])
+  end
+
+  def update
+    @recording = Recording.find(params[:id])
+    @recording.update(recording_params)
+    redirect_to root_path(@recording)
+  end
+
   def create
     @recording = Recording.new(recording_params)
     @recording.user = current_user
