@@ -1,2 +1,33 @@
-<h1>Show all Meals and Recipes</h1>
-<h1>index page</h1>
+<h1>Meals </h1>
+
+<div class="meal-index-card">
+  <div class="meal-cards-container">
+    <% @meals.each do |meal| %>
+      <div class="meal-card">
+        <div class="meal-image">
+          <%= image_tag meal.image, alt: meal.name %>
+        </div>
+        <div class="meal-name">
+          <p><%= meal.name %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+<%# <div class="meal-index-card">
+  <div class="meal-cards-container">
+    <% [chia_pudding, mushroom_egg, tofu_scramble, spinach_omlette, chicken_veg, vege_salad, lentil_soup, sweet_potato, chicken_salad, salmon_asparagus, tofu_curry, chickpea_stew, apple_almond, greek_yoghurt, cheddar, boiled_egg].each do |meal| %>
+      <%# <div class="meal-card">
+        <div class="meal-image">
+          <%= image_tag meal.image, alt: meal.name %>
+        <%# </div>
+        <div class="meal-name">
+          <p><%= meal.name %>
+        <%# </div>
+      </div>
+    <% end %>
+  <%# </div>
+</div>    %>
