@@ -1,4 +1,8 @@
 // Specific CSS for your home-page
+body{
+  background-color: $theme;
+}
+
 .banner {
   background-image: asset-url('background_mama.png');
   width: 100%;
