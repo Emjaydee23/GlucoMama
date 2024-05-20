@@ -1,10 +1,27 @@
 // This is the SCSS for the blood form page
-.form{
-  background-color:#A58AC8;
-  margin: 0 auto;
-  border-radius: 5px;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 50px;
+  background-color: $theme;
+  border-radius: 30px;
 }
 
+.form{
+  margin: 50px auto;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+  padding: 20px 20px 20px 20px;
+}
+
+
+
+// i {
+//   font-size: 60px;
+//   color: red;
+// }
 .heading{
   color:black;
   text-align:center;
@@ -20,4 +37,26 @@
   align-items: center;
   text-decoration: none;
 
+}
+
+
+
+#new_recording {
+  border-radius: 15px;
+  background-color: white;
+}
+#recording_reading {
+  border-radius: 15px;
+}
+
+#recording_time {
+  border-radius: 15px;
+}
+
+#recording_date {
+  border-radius: 15px;
+}
+
+#recording_ingredients {
+  border-radius: 15px;
 }
