@@ -17,7 +17,7 @@ User.destroy_all
 
 puts "Creating Users"
 user = User.create(email: "test@test.com", password: 123456, first_name:"Test", last_name:"Testing", birthday:2024-01-01, due_date:2024-05-01 , clinician:false )
-clinician = User.create(email: "user@user.com", password: 123456, first_name:"User", last_name:"Using", birthday:2024-01-01, due_date:2024-05-01 , clinician:false  )
+clinician = User.create(email: "user@user.com", password: 123456, first_name:"User", last_name:"Using", birthday:2024-01-01, due_date:nil , clinician:true  )
 
 
 puts "Show Meals and Recipes"

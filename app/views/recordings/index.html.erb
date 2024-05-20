@@ -36,7 +36,8 @@
           <% end %>
           <h6>Timing:<%= search.time %></h6>
           <h6>Meal details:  <%= search.ingredients %></h6>
-          <%= link_to "Edit/Delete", root_path %>
+          <%= link_to "Edit", edit_recording_path(search) %>
+          <%= link_to "Delete", recording_path(search) %>
         </div>
       </div>
     <% end %>

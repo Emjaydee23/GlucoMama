@@ -10,6 +10,14 @@ class RecordingsController < ApplicationController
   end
 
   def show
+    @recording = Recording.find(params[:id])
+    @recording.destroy
+    redirect_to recordings_path, status: :see_other
+  end
+
+
+
+  def feedback
     # @reading = Recording.find(params[:id]).reading
     @reading = Recording.find(params[:id]).reading
   end
@@ -25,7 +33,7 @@ class RecordingsController < ApplicationController
   def update
     @recording = Recording.find(params[:id])
     @recording.update(recording_params)
-    redirect_to root_path(@recording)
+    redirect_to recordings_path
   end
 
   def create
@@ -45,7 +53,7 @@ class RecordingsController < ApplicationController
   def destroy
     @recording = Recording.find(params[:id])
     @recording.destroy
-    redirect_to search_path, status: :see_other
+    redirect_to recordings_path, status: :see_other
   end
 
 

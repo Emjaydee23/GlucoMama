@@ -1,34 +1,24 @@
-<div class="container w-50">
-<h1 class="heading">Feedback</h1>
-<h3 class="heading">You results are in...</h3>
+<h1>Edit blood</h1>
 
-<h4 class="heading"> You have recorded having a BM of <%= @reading  %> </h4>
-<% if @reading > 4  %>
-  <p>Your value is a bit on the high side- here's some recipes we'd like to recommend , based on your BM input.<button><p> <%= link_to "See Meals", root_path %></p></button>
-<% elsif @reading >= 2 && @reading <= 4   %>
-  <p>Your value is normal! Well done Mama! Keep up the good work- If you want to have a look at some recipes, here are some that could inspire you <%= link_to "See Meals", root_path %></p>
-<% elsif @reading < 2  %>
-  <p>Your value is a bit on the low side- here's some recipes we'd like to recommend , based on your BM input. <%= link_to "See Meals", root_path %></p>
-<% end  %>
+<div class="form container w-50">
+<%= simple_form_for(@recording) do |f| %>
+  <h1 class="heading info">Edit Blood Glucose</h1>
 
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
-  </div>
+  <%= f.input :reading, label: 'Please type in your BM (mmol/l):', size: "70x5" %>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+  <%= f.input :time, :collection => ["BB(Before Breakfast)","AB(After Breakfast)" ,"AL(After Lunch)", "AD(After Dinner)"],  label: 'When was your glucose reading taken?', error: 'Timing is mandatory, please specify one', input_html: { maxlength: 200 } %>
+  <h1 class="heading">Edit Meal</h1>
+  <%= f.input :ingredients, as: :text, input_html: {rows: 50, cols: 100}, label: 'Describe what meal you had and describe quantity ', error: 'Please noted down your meal and give information on your meal', input_html: { maxlength: 200 } %>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Lunch
-  </div>
+  <%= link_to "Delete",
+  recording_path(@recording),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+<% end %>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Dinner
-  </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Snacks
-  </div>
 
-</div>
-<%= link_to "Back to Homepage", root_path %>
-<%= link_to "See All Trends", recordings_path %>
+<button class="button"><%= link_to "Back to Homepage", root_path %></button>
+<button class="button"><%= link_to "See All Trends", recordings_path %></button>
 </div>
