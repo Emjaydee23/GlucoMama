@@ -12,7 +12,14 @@ Rails.application.routes.draw do
 
 
   # Meals/Recipe page
-  get 'meals', to: 'meals#index'
+  get '/meals/breakfast', to: 'meals#breakfast', as: 'breakfast'
+  get '/meals/lunch', to: 'meals#lunch', as: 'lunch'
+  get '/meals/snacks', to: 'meals#snacks', as: 'snacks'
+  get '/meals/dinner', to: 'meals#dinner', as: 'dinner'
+  resources :meals
+   # get '/meals/:id', to: 'meals#show', as: 'meal'
+
+
 
 
   # User Dashboard
@@ -33,8 +40,6 @@ Rails.application.routes.draw do
   # get 'recordings/:id/edit', to: 'recordings#edit' # Edit your blood glucose entry if user had made a mistake
   patch 'recordings/:id', to: 'recordings#update' # Update your entry, given your details that were previously there( present in the form), to change
   delete 'recordings/:id', to: 'recordings#destroy' # Delete your BM entry
-
-
 
 
 end
