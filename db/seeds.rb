@@ -25,7 +25,7 @@ puts "Show Meals and Recipes"
 
 # Seeds for meals in Breakfast category (4 items)
 
-chia_pudding = Meal.new(name: "Overnight Chia pudding",
+chia_pudding = Meal.create(name: "Overnight Chia pudding",
 note: "Delight in a guilt-free treat with our Overnight Chia Pudding, specially crafted for gestational diabetic women.
 This nutritious blend of chia seeds soaked overnight in creamy almond milk, sweetened with a hint of honey, and topped with fresh fruit offers a low glycemic index option, perfect for maintaining stable blood sugar levels.
 Whether enjoyed for breakfast or as a wholesome dessert, it's a delicious and diabetes-friendly choice to support a healthy pregnancy. ",
@@ -46,7 +46,7 @@ image:"https://www.theworktop.com/wp-content/uploads/2017/09/Chia-Seeds-in-Yogur
 )
 
 
-mushroom_egg = Meal.new(name: "Mushroom-Spinach scrambled eggs",
+mushroom_egg = Meal.create(name: "Mushroom-Spinach scrambled eggs",
 note: "Kickstart your day with a savory and diabetic-friendly option like our Mushroom Spinach Scrambled Eggs.
 This hearty blend of fluffy scrambled eggs cooked with sautéed mushrooms and vibrant spinach leaves provides a protein-packed meal while keeping blood sugar levels in check.
 With carefully selected ingredients and balanced flavors, it's a nutritious breakfast choice for gestational diabetic women seeking both taste and health benefits. ",
@@ -71,7 +71,7 @@ image:"https://www.skinnytaste.com/wp-content/uploads/2022/01/Mushroom-Spinach-S
 
 
 
-tofu_scramble = Meal.new(name: "Tofu Scramble with Vegetables",
+tofu_scramble = Meal.create(name: "Tofu Scramble with Vegetables",
 note: "Experience a satisfying and diabetic-friendly plant-based delight with our Tofu Scramble with Vegetables.
 Crafted to meet the dietary needs of gestational diabetic women, this wholesome blend of crumbled tofu and colorful sautéed vegetables offers a protein-rich alternative to traditional scrambled eggs.
 Bursting with flavor and nutrients, it's a delicious vegan option that supports a balanced diet during pregnancy. ",
@@ -100,7 +100,7 @@ image:"https://eatsomethingvegan.com/wp-content/uploads/2021/07/Veggie-Tofu-Brea
 
 
 
-spinach_omlette = Meal.new(name: "Spinach Feta Omelette with Toast",
+spinach_omlette = Meal.create(name: "Spinach Feta Omelette with Toast",
 note: "Indulge in a gourmet breakfast while managing gestational diabetes with our Spinach Feta Omelette with Toast.
 This mouthwatering combination of fluffy eggs, sautéed spinach, and creamy feta cheese provides a satisfying meal without compromising blood sugar levels.
 Served alongside lightly toasted bread, it's a diabetic-friendly option that's both elegant and nourishing, perfect for ensuring a healthy pregnancy journey.",
@@ -127,7 +127,7 @@ image:"https://images.squarespace-cdn.com/content/v1/62d61e7ece25bb77f9eef8a8/d6
 
 # Seeds for meals in Lunch category (4 items)
 
-chicken_veg = Meal.new(name: "Chicken, Vegetable, and Brown Rice",
+chicken_veg = Meal.create(name: "Chicken, Vegetable, and Brown Rice",
 note: "Savor the wholesome goodness of our Chicken, Vegetable, and Brown Rice dish, thoughtfully crafted with the health needs of gestational diabetic women in mind.
 Tender chicken breast, colorful vegetables, and nutrient-rich brown rice come together in a flavorful medley that's low in glycemic index, providing sustained energy without spiking blood sugar levels.
 Packed with protein, fiber, and essential nutrients, it's a nourishing meal choice to support a balanced diet during pregnancy.",
@@ -150,11 +150,11 @@ Instructions:
 6) Once carrots begin to soften (around 5 minutes), add the broccoli and continue cooking for 3-4 more minutes until tender.
 7) Drain the veg and mix with the cooked rice. Season well with salt, pepper and a little garlic powder.",
 threshold: "below",
-image:"app/assets/images/lunch/chicken_vege_rice_l.jpg")
+image:"chicken_vege_rice_l.jpg")
 
 
 
-vege_salad = Meal.new(name: "Roasted Vegetables, Chickpea, and Quinoa Salad",
+vege_salad = Meal.create(name: "Roasted Vegetables, Chickpea, and Quinoa Salad",
 note: " Elevate your dining experience with our Roasted Vegetables, Chickpea, and Quinoa Salad, a vibrant and diabetes-friendly option perfect for expecting mothers.
 Roasted seasonal vegetables, protein-packed chickpeas, and wholesome quinoa combine to create a satisfying salad bursting with flavor and nutrients.
 With its balanced blend of complex carbohydrates, fiber, and protein, this dish helps regulate blood sugar levels while providing essential prenatal nutrition.",
@@ -183,7 +183,7 @@ image:"https://www.deliciousmagazine.co.uk/wp-content/uploads/2020/02/069-roaste
 
 
 
-lentil_soup = Meal.new(name: "Red Lentil and Zucchini Soup",
+lentil_soup = Meal.create(name: "Red Lentil and Zucchini Soup",
 note: " Warm your soul with our comforting Red Lentil and Zucchini Soup, a hearty option ideal for gestational diabetic women seeking a nourishing and balanced meal.
 Made with wholesome ingredients like red lentils, zucchini, and aromatic spices, this flavorful soup is rich in fiber and protein while being low on the glycemic index.
 Enjoy a bowlful of goodness that's not only satisfying but also supports stable blood sugar levels and overall well-being during pregnancy.",
@@ -214,11 +214,11 @@ Make sure that the pot is off of the heat so that the puree doesn’t splatter.
 8. Cook the soup stirring often, until the lentils start to break down. About 25-30 minutes. Add more liquid if needed.
 9. Taste and adjust seasoning if needed. Serve with a dollop of yogurt, sliced scallions, and lemon wedges. Enjoy!",
 threshold: "above",
-image:"app/assets/images/lunch/red_lentil_soup_l.jpg")
+image:"red_lentil_soup_l.jpg")
 
 
 
-sweet_potato = Meal.new(name: "Roasted Sweet Potatoes and Chickpea Salad",
+sweet_potato = Meal.create(name: "Roasted Sweet Potatoes and Chickpea Salad",
 note: "Treat yourself to a delicious and nutritious meal with our Roasted Sweet Potatoes and Chickpea Salad, specially tailored for gestational diabetic women.
 Oven-roasted sweet potatoes and hearty chickpeas mingle with fresh greens and a zesty dressing to create a satisfying salad that's both filling and diabetes-friendly.
 Rich in fiber, vitamins, and minerals, it's a flavorful choice that helps stabilize blood sugar levels while supporting maternal health during pregnancy.",
@@ -257,7 +257,7 @@ image:"https://minimalistbaker.com/wp-content/uploads/2015/08/10-ingredient-HEAL
 
 # Seeds for meals in Dinner category (4 items)
 
-chicken_salad = Meal.new(name: "Grilled Chicken and Mixed Green Salad",
+chicken_salad = Meal.create(name: "Grilled Chicken and Mixed Green Salad",
 note: "Elevate your dining experience with our Grilled Chicken and Mixed Green Salad, a refreshing and diabetes-friendly option perfect for expectant mothers.
 Juicy grilled chicken breast, crisp mixed greens, and an assortment of colorful vegetables come together to create a vibrant and nutritious salad.
 With its balanced combination of lean protein, fiber, and essential vitamins and minerals, it's a wholesome choice that supports blood sugar control and maternal health throughout pregnancy.",
@@ -287,11 +287,11 @@ Mix well with a whisk or shake in a jar until well combined.
 Add chicken bites.
 6) Top the salad with some shaved parmesan cheese and the balsamic dressing.",
 threshold: "above",
-image:"app/assets/images/dinner/chicken_green_salad_l.jpg")
+image:"chicken_green_salad_l.jpg")
 
 
 
-salmon_asparagus = Meal.new(name: "Salmon and Grilled Asparagus with Quinoa:",
+salmon_asparagus = Meal.create(name: "Salmon and Grilled Asparagus with Quinoa:",
 note: "Indulge in a flavorful and nutritious meal designed with the health of gestational diabetic women in mind.
 Our Salmon and Grilled Asparagus with Quinoa dish offers a perfect balance of protein, healthy fats, and complex carbohydrates.
 Tender grilled salmon, vibrant asparagus spears, and fluffy quinoa come together to create a delicious and blood sugar-friendly meal.
@@ -309,11 +309,11 @@ Instructions:
 3. Simmer the quinoa with water just above the top, covered, for 10 minutes.
 4. Assemble on a plate.",
 threshold: "below",
-image:"app/assets/images/dinner/salmon_asparag_quinoa_d.jpg")
+image:"salmon_asparag_quinoa_d.jpg")
 
 
 
-tofu_curry = Meal.new(name: "Tofu and Vegetable Curry",
+tofu_curry = Meal.create(name: "Tofu and Vegetable Curry",
 note: "Experience the exotic flavors of our Tofu and Vegetable Curry, tailored to meet the dietary needs of gestational diabetic women.
 This aromatic and diabetes-friendly dish features protein-rich tofu simmered in a fragrant blend of spices, paired with an array of colorful vegetables.
 Low in glycemic index and brimming with plant-based goodness, it's a satisfying curry that helps regulate blood sugar levels while providing essential nutrients for a healthy pregnancy.",
@@ -343,7 +343,7 @@ image:"https://parsleyinmyteeth.com/wp-content/uploads/2015/08/Vegetable-Curry-w
 
 
 
-chickpea_stew = Meal.new(name: "Vegan Chickpea Stew",
+chickpea_stew = Meal.create(name: "Vegan Chickpea Stew",
 note: "Delight in a hearty and diabetes-friendly meal with our Vegan Chickpea Stew, thoughtfully crafted for gestational diabetic women seeking nutritious and flavorful options.
 This comforting stew boasts tender chickpeas simmered with an assortment of vegetables and aromatic herbs, creating a rich and satisfying dish that's both low in glycemic index and high in fiber.
 Enjoy a bowlful of plant-based goodness that supports stable blood sugar levels and promotes maternal well-being during pregnancy.",
@@ -383,7 +383,7 @@ image:"https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2017/11/vegan-chic
 # Seeds for meals in Snacks category (4 items)
 
 
-apple_almond = Meal.new(name: "Apple Slices with Almond Butter",
+apple_almond = Meal.create(name: "Apple Slices with Almond Butter",
 note: "Treat yourself to a delightful snack that's both satisfying and blood sugar-friendly.
 Our Apple Slices with Almond Butter offer a perfect balance of sweetness from crisp apple slices paired with the creamy richness of almond butter.
 Packed with fiber, protein, and healthy fats, it's a nutritious option for gestational diabetic women seeking a tasty and satiating snack to help stabilize blood sugar levels and curb cravings during pregnancy.",
@@ -397,11 +397,11 @@ Instructions:
 2. Remove apples from bag and arrange them in a circle on a small plate.
 3. Scoop the almond/peasnut butter in a small bowl and place in the centre of the dish.",
 threshold: "above",
-image:"app/assets/images/snack/apple_slices_almond_butter.jpg")
+image:"apple_slices_almond_butter.jpg")
 
 
 
-greek_yoghurt = Meal.new(name: "Greek Yogurt with Berries",
+greek_yoghurt = Meal.create(name: "Greek Yogurt with Berries",
 note: "Indulge in a creamy and diabetes-friendly treat with our Greek Yogurt with Berries, specially curated for expectant mothers managing gestational diabetes.
 Creamy Greek yogurt topped with a medley of fresh berries provides a burst of flavor and essential nutrients, including protein, calcium, and antioxidants.
 Low in sugar and high in satiating protein, it's a satisfying snack or breakfast option that supports stable blood sugar levels and promotes maternal well-being throughout pregnancy",
@@ -415,11 +415,11 @@ Instructions:
 2) Wash and slice your berries, place on top of the yogurt.
 3) Enjoy as an amazing breakfast!",
 threshold: "below",
-image:"app/assets/images/snack/greek_yoghurt_with_berries_s.jpg")
+image:"greek_yoghurt_with_berries_s.jpg")
 
 
 
-cheddar = Meal.new(name: "Cheddar Cheese",
+cheddar = Meal.create(name: "Cheddar Cheese",
 note: "Enjoy the rich and savory goodness of Cheddar Cheese as a wholesome and blood sugar-friendly snack option for gestational diabetic women.
 Packed with protein and calcium, cheddar cheese provides a satisfying and nutritious snack choice that helps regulate blood sugar levels and supports fetal development during pregnancy.
 Pair it with whole grain crackers or crisp vegetable slices for a delicious and balanced snack that satisfies cravings without causing spikes in blood sugar.",
@@ -429,11 +429,11 @@ recipe:"Ingredients:
 Instructions:
 1) snack on cubed cheddar cheese inbetween your meals ( feel free to alternate between other hard cheese too)",
 threshold: "below",
-image:"app/assets/images/snack/cheese_s.jpg")
+image:"cheese_s.jpg")
 
 
 
-boiled_egg = Meal.new(name: "Boiled Egg & Cucumber",
+boiled_egg = Meal.create(name: "Boiled Egg & Cucumber",
 note: "Nourish your body with a simple yet satisfying snack that's perfect for gestational diabetic women.
 Our Boiled Egg and Cucumber combination offers a protein-rich and low-glycemic option that's ideal for managing blood sugar levels during pregnancy.
 Nutrient-dense boiled eggs paired with hydrating and crunchy cucumber slices provide a refreshing and satiating snack choice that supports maternal health and fetal development.
@@ -447,4 +447,4 @@ Instructions:
 1) boil 2 eggs and deshell it and place it on the plate
 2) add sliced cucumbers to plate",
 threshold: "above",
-image:"app/assets/images/snack/boiled_egg_s.jpg")
+image:"boiled_egg_s.jpg")
