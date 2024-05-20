@@ -14,6 +14,9 @@ class PagesController < ApplicationController
 
   end
 
+  def clinician_dashboard
+  end
+
   def show
     @user = current_user
   end

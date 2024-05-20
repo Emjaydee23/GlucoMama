@@ -17,9 +17,10 @@ Rails.application.routes.draw do
 
   # User Dashboard
   resources :recordings
-  get "dashboard", to: "dashboard#show"
-  get 'dashboard/new', to: 'dashboard#new', as: :new_entry
+  get "dashboard", to: "pages#dashboard"
+
   # Clinician Dashboard
+  get 'clinician_dashboard', to: 'pages#clinician_dashboard'
   get 'dashboard/patients/:id', to: 'pages#show', as: :patient_profile
   # get 'dashboard/patients/:id/chatroom', to: 'pages#show' , as: :chatroom
 
