@@ -24,11 +24,11 @@ Rails.application.routes.draw do
   get 'dashboard/patients/:id', to: 'pages#show', as: :patient_profile
   # get 'dashboard/patients/:id/chatroom', to: 'pages#show' , as: :chatroom
 
-
+  get 'recordings/:id/feedback', to: 'recordings#feedback', as: :feedback
   # May get deleted as it gets moved to the dashboard
-  # get 'recordings/:id', to: 'recordings#new', as: :new_recording -> to rename it so can rediect to edit form when click the button
+  get 'recordings/:id', to: 'recordings#new'
   post 'recordings/:id', to: 'recordings#create'
-  # get 'recordings/:id', to: 'recordings#edit', as: :edit_recording
+  get 'recordings/:id', to: 'recordings#edit'
   # get 'recordings', to: 'recordings#index', as: :search # This is for the searchbar - get request for items (bloods and meals) that match a certain condition (i.e. the date user input)
   # get 'recordings/:id/edit', to: 'recordings#edit' # Edit your blood glucose entry if user had made a mistake
   patch 'recordings/:id', to: 'recordings#update' # Update your entry, given your details that were previously there( present in the form), to change
