@@ -52,6 +52,30 @@ h1 {
   color: #333;
 }
 
+.buttons-meals-group {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  gap: 10px; /* Adds space between buttons */
+
+  .button-meals-btn {
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: $champpink; /* Button background color */
+    color: $persianindigo; /* Button text color */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Add border radius to buttons */
+    text-decoration: none; /* Remove default link underline */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Add transition effect */
+
+    &:hover {
+      background-color: $peach; /* Change background color on hover */
+    }
+  }
+}
+
+
+
+
 /* Responsive adjustments */
 @media (max-width: 1200px) {
   .meal-card {

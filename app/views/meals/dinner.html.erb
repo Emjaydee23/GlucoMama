@@ -1,0 +1,26 @@
+<h1>Dinner Meals</h1>
+
+<div class="buttons-meals-group">
+      <%= link_to "All", meals_path, class: "button-meals-btn" %>
+      <%= link_to "Breakfast", breakfast_path, class: "button-meals-btn" %>
+      <%= link_to "Lunch", lunch_path, class: "button-meals-btn" %>
+      <%= link_to "Snacks", snacks_path, class: "button-meals-btn" %>
+      <%= link_to "Dinner", dinner_path, class: "button-meals-btn" %>
+</div>
+
+
+<div class="meal-index-card">
+  <div class="meal-cards-container">
+    <% @meals.each do |meal| %>
+      <div class="meal-card">
+        <div class="meal-image">
+          <%= image_tag meal.image, alt: meal.name %>
+        </div>
+        <div class="meal-name">
+          <p><%= meal.name %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= link_to "Back To Meals", meals_path %>
