@@ -1,7 +1,7 @@
 <div class="px-5 mx-5">
 
 
-  <h2><%= @user.email %>'s Review</h2>
+  <h2><%= current_user.email %>'s Review</h2>
 
   <%# Searchbar %>
   <div class="row justify-content-center" >
@@ -26,13 +26,18 @@
           <% if search.reading > 5 %>
             <div>
               <h6>BM:<strong style="color:red"><%=  search.reading %></strong>mmol/L</h6>
+
           <% elsif search.reading >= 2 && search.reading <= 4 %>
             <h6>BM:<strong style="color:green"><%=  search.reading %></strong>mmol/L</h6>
+
           <% elsif search.reading < 2 %>
             <h6>BM:<strong style="color:red"><%=  search.reading %></strong>mmol/L</h6>
+
           <% end %>
           <h6>Timing:<%= search.time %></h6>
-          <h6>Meal details?<%= search.ingredients %></h6>
+          <h6>Meal details:  <%= search.ingredients %></h6>
+          <%= link_to "Edit", edit_recording_path(search) %>
+          <%= link_to "Delete", recording_path(search) %>
         </div>
       </div>
     <% end %>
@@ -63,19 +68,25 @@
               <h6>Glucose:<strong style="color:red"><%=  recording.reading %></strong>mmol/L</h6>
               <h6>Date:<%=  recording.date %></h6>
               <h6>Time:<%=  recording.time %></h6>
+              <h6>Meal details?<%= recording.ingredients %></h6>
 
             </div>
+
           <% elsif recording.reading >= 2 && recording.reading <= 4 %>
             <div>
               <h6>Glucose:<strong style="color:orange"><%=  recording.reading %></strong> mmol/L</h6>
               <h6>Date:<%=  recording.date %></h6>
               <h6>Time:<%=  recording.time %></h6>
+              <h6>Meal details?<%= recording.ingredients %></h6>
+
             </div>
           <% elsif recording.reading < 2 %>
             <div>
               <h6>Glucose:<strong style="color:red"><%=  recording.reading %></strong>mmol/L</h6>
               <h6>Date:<%=  recording.date %></h6>
               <h6>Time:<%=  recording.time %></h6>
+              <h6>Meal details?<%= recording.ingredients %></h6>
+
             </div>
           <% end %>
         </div>

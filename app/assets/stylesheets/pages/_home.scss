@@ -1,9 +1,11 @@
 // Specific CSS for your home-page
+
 body{
   background-color: $theme;
 }
 
 .banner {
+.home-banner {
   background-image: asset-url('background_mama.png');
   width: 100%;
   color: $persianindigo;
