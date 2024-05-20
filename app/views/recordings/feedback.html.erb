@@ -1,0 +1,34 @@
+<div class="container w-50">
+<h1 class="heading">Feedback</h1>
+<h3 class="heading">You results are in...</h3>
+
+<h4 class="heading"> You have recorded having a BM of <%= @reading  %> </h4>
+<% if @reading > 4  %>
+  <p>Your value is a bit on the high side- here's some recipes we'd like to recommend , based on your BM input.<button><p> <%= link_to "See Meals", recordings_path %></p></button>
+<% elsif @reading >= 2 && @reading <= 4   %>
+  <p>Your value is normal! Well done Mama! Keep up the good work- If you want to have a look at some recipes, here are some that could inspire you <%= link_to "See Meals", recordings_path %></p>
+<% elsif @reading < 2  %>
+  <p>Your value is a bit on the low side- here's some recipes we'd like to recommend , based on your BM input. <%= link_to "See Meals", recordings_path %></p>
+<% end  %>
+
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Breakfast
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+    Lunch
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+    Dinner
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+    Snacks
+  </div>
+
+</div>
+<%= link_to "Back to Homepage", root_path %>
+<%= link_to "See All Trends", recordings_path %>
+</div>

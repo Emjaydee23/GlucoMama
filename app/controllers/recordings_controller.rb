@@ -1,16 +1,40 @@
 class RecordingsController < ApplicationController
 
   def index
-    @user = current_user
-    @recordings = current_user.recordings.order(date: :desc)
-    @meal_recordings = current_user.recordings.order(date: :desc).where.not(ingredients: "")
-    @blood_glucose_recordings = current_user.recordings.order(date: :desc).where(ingredients: "").or(@recordings.where.not(ingredients: ""))
+    @user = params[:patient].present? ? User.find(params[:patient])  : current_user
+    @recordings = @user.recordings.order(date: :desc)
+    @meal_recordings = @user.recordings.order(date: :desc).where.not(ingredients: "")
+    @blood_glucose_recordings = @user.recordings.order(date: :desc).where(ingredients: "").or(@recordings.where.not(ingredients: ""))
     @searches = @blood_glucose_recordings.where(date: params[:query])
+    @patients = User.where(clinician: false)
 
+  end
+
+  def show
+    @recording = Recording.find(params[:id])
+    @recording.destroy
+    redirect_to recordings_path, status: :see_other
+  end
+
+
+
+  def feedback
+    # @reading = Recording.find(params[:id]).reading
+    @reading = Recording.find(params[:id]).reading
   end
 
   def new
     @recording = Recording.new
+  end
+
+  def edit
+    @recording = Recording.find(params[:id])
+  end
+
+  def update
+    @recording = Recording.find(params[:id])
+    @recording.update(recording_params)
+    redirect_to recordings_path
   end
 
   def create
@@ -27,11 +51,14 @@ class RecordingsController < ApplicationController
     #Also redirected to the fedback page - personalised writing # Ruby if else logic will be in the html itself
   end
 
-
-  def show
-    # @reading = Recording.find(params[:id]).reading
-    @reading = Recording.find(params[:id]).reading
+  def destroy
+    @recording = Recording.find(params[:id])
+    @recording.destroy
+    redirect_to recordings_path, status: :see_other
   end
+
+
+
 
   private
   def recording_params

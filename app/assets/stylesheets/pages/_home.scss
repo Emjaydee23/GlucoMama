@@ -1,5 +1,6 @@
 // Specific CSS for your home-page
 
+
 body {
   background-color: $theme;
 }
@@ -15,6 +16,21 @@ body {
   // font-weight: 400;
   // font-style: normal
   }
+
+.banner {
+  .home-banner {
+    background-image: asset-url('background_mama.png');
+    width: 100%;
+    color: $persianindigo;
+    height: 700px;
+    background-size: cover;
+    text-align: end;
+    font-size: 20px;
+
+
+  }
+}
+
 
 .text {
   display: flex;
