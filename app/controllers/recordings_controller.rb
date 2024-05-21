@@ -42,7 +42,7 @@ class RecordingsController < ApplicationController
     @recording.user = current_user
     if @recording.save
        # After submitting the form , details are submitted to index with all the BM and meal submissions of the last wek
-      redirect_to feedback_path(@recording)
+      redirect_to recordings_path
 
 
     else
