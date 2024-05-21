@@ -37,6 +37,7 @@ h1 {
 }
 
 .meal-image img {
+  background-color: transparent;
   width: 100%;
   height: auto;
   display: block;
@@ -63,18 +64,16 @@ h1 {
     color: $persianindigo; /* Button text color */
     border: none; /* Remove button border */
     border-radius: 5px; /* Add border radius to buttons */
-    text-decoration: none; /* Remove default link underline */
+    text-decoration: none !important; /* Remove default link underline */
     cursor: pointer; /* Change cursor to pointer on hover */
     transition: background-color 0.3s ease; /* Add transition effect */
 
     &:hover {
       background-color: $peach; /* Change background color on hover */
+      text-decoration: none; /* Ensure no underline on hover */
     }
   }
 }
-
-
-
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {

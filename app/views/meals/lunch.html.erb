@@ -8,19 +8,21 @@
 </div>
 
 
-
 <div class="meal-index-card">
   <div class="meal-cards-container">
     <% @meals.each do |meal| %>
       <div class="meal-card">
+      <%= link_to meal_path(meal) do  %>
         <div class="meal-image">
           <%= image_tag meal.image, alt: meal.name %>
         </div>
         <div class="meal-name">
           <p><%= meal.name %></p>
         </div>
+         <% end %>
       </div>
     <% end %>
   </div>
 </div>
+<%= link_to "Back To Meals", meals_path %>
 <%= link_to "Back To Meals", meals_path %>

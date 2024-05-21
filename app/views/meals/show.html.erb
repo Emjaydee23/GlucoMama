@@ -1,12 +1,14 @@
-
 <h1><%= @meal.name %></h1>
 
 <div class="meal-details">
-  <p><strong>Note:</strong> <%= @meal.note %></p>
+  <div class="meal-image">
+          <%= image_tag @meal.image, alt: @meal.name %>
+        </div>
+  <p><%= @meal.note %></p>
   <p><strong>Timing:</strong> <%= @meal.timing %></p>
   <p><strong>Recipe:</strong></p>
-  <p><%= @meal.recipe %></p>
-  <p><strong>Threshold:</strong> <%= @meal.threshold %></p>
+  <p><%= simple_format(@meal.recipe) %></p>
 </div>
-
-<%= link_to "Back to Meals", meals_path %>
+  <div class="buttons-meals-group">
+      <%= link_to "Recipes", meals_path, class: "button-meals-btn" %>
+  </div>
