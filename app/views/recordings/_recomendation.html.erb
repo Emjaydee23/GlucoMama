@@ -2,16 +2,18 @@
   <h1>Meal Feedback</h1>
   <div class="meal-cards-container">
     <% timing.each do |meal| %>
-      <div class="meal-card">
-        <div class="meal-image">
-          <a href="<%= meals_path%>">
-           <%= image_tag meal.image, alt: meal.name %>
-          </a>
+      <%= link_to meal_path(meal) do %>
+         <div class="meal-card">
+          <div class="meal-image">
+            <div class="meal-image">
+              <%= image_tag meal.image, alt: meal.name %>
+            </div>
+          </div>
+          <div class="meal-name">
+            <p><%= meal.name %></p>
+          </div>
         </div>
-        <div class="meal-name">
-          <p><%= meal.name %></p>
-        </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
