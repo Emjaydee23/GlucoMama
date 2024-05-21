@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   # Homepage
   root to: "pages#home"
 
+  # current_user.clinician? == true ? root to: "pages#clinician_dashboard" :  root to: "pages#home"
+
 
   # Meals/Recipe page
   get 'meals', to: 'meals#index'
@@ -33,6 +35,20 @@ Rails.application.routes.draw do
   # get 'recordings/:id/edit', to: 'recordings#edit' # Edit your blood glucose entry if user had made a mistake
   patch 'recordings/:id', to: 'recordings#update' # Update your entry, given your details that were previously there( present in the form), to change
   delete 'recordings/:id', to: 'recordings#destroy' # Delete your BM entry
+
+
+  # Chatroom
+  # get 'chatroom/:consultation_id', to: 'chatrooms#index'
+  resources :chatrooms, only: [:show] do
+    resources :messages , only: [:create]
+  end
+
+  # resources :users do
+  #   post 'create_chat', on: :member
+  #   resources :chatrooms, only: [:index, :show] do
+  #     resources :messages, only: [:create]
+  #   end
+  # end
 
 
 

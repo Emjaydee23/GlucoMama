@@ -9,6 +9,12 @@ pin "bootstrap", to: "bootstrap.min.js", preload: true
 pin "@popperjs/core", to: "popper.js", preload: true
 
 
+#Chat
+
+
 # Chartkick package install -> CHART!
 pin "chartkick", to: "chartkick.js"
 pin "Chart.bundle", to: "Chart.bundle.js"
+
+#Chatroom
+pin "@rails/actioncable", to: "@rails--actioncable.js" # @7.0.8

@@ -3,6 +3,7 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
+import "@rails/actioncable"
 //= require date_wrapper
 //= require bootstrap-datepicker
 // import "chartkick"

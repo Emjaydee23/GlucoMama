@@ -44,12 +44,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_20_154724) do
 
   create_table "chatrooms", force: :cascade do |t|
     t.string "title"
-    t.integer "user1", null: false
-    t.integer "user2", null: false
+    t.bigint "consultation_id", null: false
+    t.index ["consultation_id"], name: "index_chatrooms_on_consultation_id"
+  end
+
+  create_table "consultations", force: :cascade do |t|
+    t.integer "clinician_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user1"], name: "index_chatrooms_on_user1"
-    t.index ["user2"], name: "index_chatrooms_on_user2"
+    t.index ["clinician_id", "user_id"], name: "index_consultations_on_clinician_id_and_user_id", unique: true
+    t.index ["clinician_id"], name: "index_consultations_on_clinician_id"
+    t.index ["user_id"], name: "index_consultations_on_user_id"
   end
 
   create_table "meals", force: :cascade do |t|
@@ -112,8 +118,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_20_154724) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "chatrooms", "users", column: "user1"
-  add_foreign_key "chatrooms", "users", column: "user2"
+  add_foreign_key "chatrooms", "consultations"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
   add_foreign_key "recordings", "users"
