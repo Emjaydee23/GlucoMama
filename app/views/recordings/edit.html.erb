@@ -10,14 +10,14 @@
         label: 'Meal Type', error: 'Type of Meal is mandatory, please click one', input_html: { maxlength: 200 } %>
         <h1 class="heading">Edit Meal</h1>
         <%= f.input :ingredients, as: :text, input_html: {rows: 50, cols: 100},
-        label: 'Meal & Quantity', error: 'Please enter the quanity and details of your meal', input_html: { maxlength: 200 } %>
+        label: 'Meal & Quantity', error: 'Please enter the quanity and details of your meal', input_html: { maxlength: 200 }, class:"meal_input"%>
         <button class="button"><%= f.button :submit, 'Edit' %></button>
-        <%= link_to "Delete",recording_path(@recording),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
       <% end %>
 
 
-
   </div>
-
+    <div class="delete_form">
+      <%= link_to "Delete Entry",recording_path(@recording),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></button>
+    </div>
 
 </div>

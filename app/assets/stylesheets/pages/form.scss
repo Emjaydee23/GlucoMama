@@ -55,6 +55,7 @@ form {
 
 #recording_time {
   border-radius: 15px;
+  width: 94%;
 }
 
 #recording_date {
@@ -63,4 +64,38 @@ form {
 
 #recording_ingredients {
   border-radius: 15px;
+  align-items: flex-start !important;
+}
+
+.recording_ingredients {
+  border-radius: 15px;
+  align-items: flex-start !important;
+}
+
+
+#edit_recording_3 {
+  background-color: white;
+  border-radius: 15px;
+}
+
+#edit_recording_2 {
+  background-color: white;
+  border-radius: 15px;
+}
+
+// .meal_input {
+//   align-items: flex-start !important;
+// }
+
+.delete_form {
+  align-items: center;
+
+  a {
+    align-items: center;
+    text-decoration: none;
+    color: $richblack;
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px 20px 20px;
+  }
 }
