@@ -1,25 +1,46 @@
 <div class="container w-50">
-  <h1 class="heading">Feedback</h1>
-  <h3 class="heading">Your results are in...</h3>
+  <div class="feedback-heading">
+    <h1 class="heading">Feedback</h1>
+    <h3 class="heading">Your results are in...</h3>
 
-  <h4 class="heading">You have recorded having a BM of <%= @reading  %> </h4>
+    <h4 class="heading">You have recorded having a BM of <%= @reading %></h4>
 
-  <% if @reading > 4  %>
-    <p>Your value is a bit on the high side. Here are some recipes we'd like to recommend, based on your BM input. <%= link_to "See Meals", recordings_path %></p>
-  <% elsif @reading >= 2 && @reading <= 4   %>
-    <p>Your value is normal! Well done Mama! Keep up the good work. If you want to have a look at some recipes, here are some that could inspire you <%= link_to "See Meals", recordings_path %></p>
-  <% elsif @reading < 2  %>
-    <p>Your value is a bit on the low side. Here are some recipes we'd like to recommend, based on your BM input. <%= link_to "See Meals", recordings_path %></p>
-  <% end  %>
+  <div class="reading">
+  <% if @reading > 4 %>
+    <p>Your value is a bit on the high side. Here are some recipes we'd like to recommend, based on your BM input.
+  <% elsif @reading >= 2 && @reading <= 4 %>
+    <p>Your value is normal! Well done Mama! Keep up the good work. If you want to have a look at some recipes, here are some that could inspire you!
+  <% elsif @reading < 2 %>
+    <p>Your value is a bit on the low side. Here are some recipes we'd like to recommend, based on your BM input.
+  <% end %>
+  </div>
+  <div class="buttons-container">
+      <%= link_to "Recipes", meals_path, class: "button" %>
+    </div>
+   </div>
 
-  <div class="cards">
-    <% MealCategory.all.each do |category| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= category.image_url %>);">
-        <%= category.name %>
-      </div>
-    <% end %>
+  <div class="meal-index-card">
+    <h1>Meal Feedback</h1>
+
+
+
+    <div class="meal-cards-container">
+      <% Meal.all.group_by(&:timing).transform_values(&:first).values.each do |meal| %>
+        <div class="meal-card">
+          <div class="meal-image">
+            <a href="<%= meals_path%>">
+            <%= image_tag meal.image, alt: meal.name %>
+
+            </a>
+          </div>
+          <div class="meal-name">
+            <p><%= meal.name %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+
   </div>
 
-  <%= link_to "Back to Homepage", root_path %>
-  <%= link_to "See All Trends", recordings_path %>
 </div>
