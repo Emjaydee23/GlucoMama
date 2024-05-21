@@ -41,7 +41,7 @@
   </div>
 
   <h1>See all Bloods</h1>
-  <%= link_to "Add New BM", new_recording_path %>
+  <%= link_to "Add New BM", new_recording_path, class: "btn btn-primary" %>
 
   <div class="row m-0">
     <% @blood_glucose_recordings.each do |recording| %>
@@ -75,8 +75,8 @@
   </div>
 
   <%if current_user.clinician? == false %>
-    <%= link_to "Back to Dashboard", dashboard_path %>
+    <%= link_to "Back to Dashboard", dashboard_path, class: "btn btn-primary" %>
   <% else %>
-    <%= link_to "Back to Dashboard", clinician_dashboard_path %>
+    <%= link_to "Back to Dashboard", clinician_dashboard_path, class: "btn btn-primary" %>
   <% end %>
 </div>

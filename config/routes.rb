@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   get '/meals/lunch', to: 'meals#lunch', as: 'lunch'
   get '/meals/snacks', to: 'meals#snacks', as: 'snacks'
   get '/meals/dinner', to: 'meals#dinner', as: 'dinner'
-  resources :meals
+  resources :meals, only: [:index, :show]
+
    # get '/meals/:id', to: 'meals#show', as: 'meal'
 
 

@@ -1,6 +1,7 @@
 * {
   box-sizing: content-box; /* Set box-sizing back to default */
 }
+
 .dashboard-page {
   display: flex;
   flex-direction: column;
@@ -25,6 +26,7 @@
       gap: 10px;
 
       img {
+        background-color: transparent; /* Remove the background color */
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -109,6 +111,7 @@
   }
 
   .img {
+    background-color: transparent;
     width: 500px;
     height: 200px;
     border-radius: 30px;
@@ -131,42 +134,6 @@
     padding: 20px;
     margin: 20px;
     width: 200px;
-    height: 200px;
-
-    h3 {
-      color: $persianindigo;
-      margin-bottom: 10px;
-    }
-
-    p {
-      color: black;
-    }
-  }
-
-  .buttons-dashboard-group {
-    display: flex;
-    flex-direction: column; /* Ensures h3 and buttons are stacked vertically */
-    gap: 10px; /* Adds space between h3 and the button container */
-
-    .button-container {
-      display: flex; /* Creates a flexbox container for the buttons */
-      flex-direction: row; /* Ensures buttons are laid out horizontally */
-      gap: 20px; /* Adds space between buttons */
-    }
-
-    .buttons-dashboard {
-      color: $pale;
-      border-radius: 30px;
-
-      &:hover {
-        background-color: darken($pale, 10%);
-      }
-    }
-
-    .small-icon {
-      width: 100px;
-      height: 100px;
-      border-radius: 30px;
-    }
+    height: 200px
   }
 }
