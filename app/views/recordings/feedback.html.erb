@@ -5,11 +5,11 @@
     <h4 class="heading">You have recorded having a BM of <%= @reading %></h4>
 
     <div class="reading">
-      <% if @reading > 4 %>
+      <% if @reading > 7.7 %>
         <p>Your value is a bit on the high side. Here are some recipes we'd like to recommend, based on your BM input.
-      <% elsif @reading >= 2 && @reading <= 4 %>
+      <% elsif @reading >= 4.5 && @reading <= 7.7 %>
         <p>Your value is normal! Well done Mama! Keep up the good work. If you want to have a look at some recipes, here are some that could inspire you!
-      <% elsif @reading < 2 %>
+      <% elsif @reading < 4.5 %>
         <p>Your value is a bit on the low side. Here are some recipes we'd like to recommend, based on your BM input.
       <% end %>
     </div>
@@ -18,9 +18,9 @@
         <%= link_to "Recipes", meals_path, class: "button" %>
     </div>
   </div>
-  <% if @reading > 4 %>
+  <% if @reading > 7.7 %>
     <%= render partial: "recomendation", locals: {timing: @timing_above}  %>
-  <% elsif @reading < 2 %>
+  <% elsif @reading < 4.5 %>
     <%= render partial: "recomendation", locals: {timing: @timing_below}  %>
   <% end %>
 </div>
