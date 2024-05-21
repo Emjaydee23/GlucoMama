@@ -2,45 +2,25 @@
   <div class="feedback-heading">
     <h1 class="heading">Feedback</h1>
     <h3 class="heading">Your results are in...</h3>
-
     <h4 class="heading">You have recorded having a BM of <%= @reading %></h4>
 
-  <div class="reading">
-  <% if @reading > 4 %>
-    <p>Your value is a bit on the high side. Here are some recipes we'd like to recommend, based on your BM input.
-  <% elsif @reading >= 2 && @reading <= 4 %>
-    <p>Your value is normal! Well done Mama! Keep up the good work. If you want to have a look at some recipes, here are some that could inspire you!
-  <% elsif @reading < 2 %>
-    <p>Your value is a bit on the low side. Here are some recipes we'd like to recommend, based on your BM input.
-  <% end %>
-  </div>
-  <div class="buttons-container">
-      <%= link_to "Recipes", meals_path, class: "button" %>
-    </div>
-   </div>
-
-  <div class="meal-index-card">
-    <h1>Meal Feedback</h1>
-
-
-
-    <div class="meal-cards-container">
-      <% Meal.all.group_by(&:timing).transform_values(&:first).values.each do |meal| %>
-        <div class="meal-card">
-          <div class="meal-image">
-            <a href="<%= meals_path%>">
-            <%= image_tag meal.image, alt: meal.name %>
-
-            </a>
-          </div>
-          <div class="meal-name">
-            <p><%= meal.name %></p>
-          </div>
-        </div>
+    <div class="reading">
+      <% if @reading > 4 %>
+        <p>Your value is a bit on the high side. Here are some recipes we'd like to recommend, based on your BM input.
+      <% elsif @reading >= 2 && @reading <= 4 %>
+        <p>Your value is normal! Well done Mama! Keep up the good work. If you want to have a look at some recipes, here are some that could inspire you!
+      <% elsif @reading < 2 %>
+        <p>Your value is a bit on the low side. Here are some recipes we'd like to recommend, based on your BM input.
       <% end %>
     </div>
 
-
+    <div class="buttons-container">
+        <%= link_to "Recipes", meals_path, class: "button" %>
+    </div>
   </div>
-
+  <% if @reading > 4 %>
+    <%= render partial: "recomendation", locals: {timing: @timing_above}  %>
+  <% elsif @reading < 2 %>
+    <%= render partial: "recomendation", locals: {timing: @timing_below}  %>
+  <% end %>
 </div>

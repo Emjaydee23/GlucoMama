@@ -1,0 +1,17 @@
+<div class="meal-index-card">
+  <h1>Meal Feedback</h1>
+  <div class="meal-cards-container">
+    <% timing.each do |meal| %>
+      <div class="meal-card">
+        <div class="meal-image">
+          <a href="<%= meals_path%>">
+           <%= image_tag meal.image, alt: meal.name %>
+          </a>
+        </div>
+        <div class="meal-name">
+          <p><%= meal.name %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
