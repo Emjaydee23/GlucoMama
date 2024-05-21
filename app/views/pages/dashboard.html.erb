@@ -9,31 +9,38 @@
   <div class="mini-profile actions" style="margin: 25px 50px">
       <div class="mini-profile-info" >
         <h3>Profile</h3>
+          <%# <p><strong>Name:</strong> <%= current_user.first_name %></li></p>
+          <%# <p><strong>Due Date:</strong> <%= current_user.due_date %></p>
 
-<!--         <p><strong>Name:</strong> <%= current_user.first_name %></li></p>
-        <p><strong>Due Date:</strong> <%= current_user.due_date %></p>
-=======
+          <p><strong>Name:</strong> <%= current_user.first_name %></p>
+          <p><strong>Birthday:</strong><%= current_user.birthday %></p>
+          <p><strong>Due Date:</strong><%= current_user.due_date %></p>
+          <p>
+
         <p><strong>Name:</strong> <%= current_user.first_name %></p>
         <p><strong>Birthday:</strong><%= current_user.birthday %></p>
         <p><strong>Due Date:</strong><%= current_user.due_date %></p>
-        <p> -->
+        <p> 
 
       </div>
         <div class="buttons-dashboard-group">
-        <h3>Actions</h3>
+
         <div class="button-container">
           <div class="buttons-dashboard" style="padding: 0px">
             <%= link_to new_recording_path do %>
-              <%= image_tag("Gluco_back.png", alt: "input", class: "small-icon btn") %>
+              <%= image_tag("monitor.png", alt: "input", class: "small-icon btn") %>
             <% end %>
           </div>
           <div class="buttons-dashboard">
             <%= link_to meals_path do %>
-              <%= image_tag("meals.png", alt: "input", class: "small-icon btn") %>
+              <%= image_tag("meal.png", alt: "input", class: "small-icon btn") %><p>Recipes</p>
+
             <% end %>
           </div>
           <div class="buttons-dashboard">
-            <%= button_to "View Blood Glucose", "#", class: "btn" %>
+            <%= link_to recordings_path do %>
+              <%= image_tag("trend.png", alt: "input", class: "small-icon btn") %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -60,7 +67,7 @@
           <h3>Blood Glucose Trends</h3>
           <p><%= "Your blood glucose levels have been stable for the past few days." %></p>
           <% if current_user.recordings.where(created_at: Date.today.prev_day.all_day).any? %>
-            <%= image_tag("day_before_trend.png", alt: "Day before trend", class: "img") %>
+            <%= image_tag("image.png", alt: "Day before trend", class: "img") %>
           <% else %>
             <p><%= "No recordings found for the day before." %></p>
           <% end %>
