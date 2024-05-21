@@ -16,6 +16,10 @@ form {
   padding: 20px 20px 20px 20px;
 }
 
+.container-form {
+  display: flex;
+  flex-direction: column;
+}
 
 
 // i {
@@ -28,17 +32,17 @@ form {
 }
 
 .button{
-  color:black;
-  background-color: #f87baf;
+  color:$richblack;
+  background-color:$champpink;
   border-radius: 5px;
-  border-color:#f87baf ;
+  border-color:$champpink;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  margin: 120px;
 
 }
-
 
 
 #new_recording {
