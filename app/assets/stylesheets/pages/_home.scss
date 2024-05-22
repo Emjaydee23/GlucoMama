@@ -4,6 +4,18 @@
 body {
   background-color: $theme;
 }
+
+
+// .banner {
+//   .home-banner {
+//     background-image: asset-url('background_mama.png');
+//     width: 100%;
+//     color: $persianindigo;
+//     height: 700px;
+//     background-size: cover;
+//     text-align: end;
+//     font-size: 20px;
+
 .home-banner {
   background-image: asset-url('background_mama.png');
   width: 100%;
@@ -13,7 +25,8 @@ body {
   text-align: end;
   font-size: 60px;
 
-  }
+        }
+
 
 // .banner {
 //   .home-banner {
@@ -45,6 +58,7 @@ body {
     margin-top: 40px;
   }
 
+  }
 }
 
 .slogan_text {

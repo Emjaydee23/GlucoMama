@@ -1,0 +1,16 @@
+<div class="chatroom_index_page">
+    <% @chatroom.each do |chat| %>
+      <% other_user = chatroom.profile1_id == @user.id ? chatroom.profile2 : chatroom.profile1 %>
+      <%= link_to user_profile_private_chat_path(@user, @profile, chatroom) do %>
+        <div class="chatroom_index__cards">
+          <%= cl_image_tag other_profile.profile_picture.key.to_s, crop: :fill, :class => "card__avatar" %>
+          <div class="chatroom__cards__text">
+            <h3><%= other_user.first_name %></h3>
+            <p><%= other_user.updated_at.strftime("%d/%m/%Y %H:%M:%S") %></p>
+            <% last_message = other_user.messages.last %>
+            <p><%= last_message.content if last_message %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+</div>
