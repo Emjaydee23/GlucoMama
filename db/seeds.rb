@@ -14,6 +14,8 @@ puts "Destroying data"
 Recording.destroy_all
 Meal.destroy_all
 User.destroy_all
+Consultation.destroy_all
+Chatroom.destroy_all
 
 
 puts "Creating Users"
