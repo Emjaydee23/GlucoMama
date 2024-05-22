@@ -21,8 +21,8 @@ Consultation.destroy_all
 Chatroom.destroy_all
 
 puts "Creating Users"
-clinician = User.create(email: "rosa@lewagon.com", password: "123456", first_name:"User", last_name:"Using", birthday:"2024-01-01", clinician:true  )
-user = User.create(email: "amy@lewagon.com", password: "123456", first_name:"Test", last_name:"Testing", birthday:"2024-01-01", due_date:"2024-05-01" , clinician:false )
+clinician = User.create(email: "rosa@lewagon.com", password: "123456", first_name:"Rosa", last_name:"Diaz", birthday:"2024-01-01", clinician:true  )
+user = User.create(email: "amy@lewagon.com", password: "123456", first_name:"Amy", last_name:"Santiago", birthday:"2024-01-01", due_date:"2024-05-01" , clinician:false )
 
 puts "Creating consultation"
 consultation = Consultation.create(user: user, clinician: clinician)
