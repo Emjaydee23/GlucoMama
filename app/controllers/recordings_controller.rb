@@ -21,6 +21,8 @@ class RecordingsController < ApplicationController
   def feedback
     # @reading = Recording.find(params[:id]).reading
     @reading = Recording.find(params[:id]).reading
+    @timing_above = Meal.all.where(threshold: "above").group_by(&:timing).transform_values(&:first).values
+    @timing_below = Meal.all.where(threshold: "below").group_by(&:timing).transform_values(&:first).values
   end
 
   def new
@@ -43,8 +45,6 @@ class RecordingsController < ApplicationController
     if @recording.save
        # After submitting the form , details are submitted to index with all the BM and meal submissions of the last wek
       redirect_to feedback_path(@recording)
-
-
     else
       render :new, status: :unprocessable_entity
     end

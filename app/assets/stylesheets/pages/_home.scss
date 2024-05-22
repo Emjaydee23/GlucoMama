@@ -1,27 +1,132 @@
 // Specific CSS for your home-page
 
-body{
+
+body {
   background-color: $theme;
 }
 
-.banner {
-  .home-banner {
-    background-image: asset-url('background_mama.png');
-    width: 100%;
-    color: $persianindigo;
-    height: 700px;
-    background-size: cover;
-    text-align: end;
-    font-size: 20px;
+
+// .banner {
+//   .home-banner {
+//     background-image: asset-url('background_mama.png');
+//     width: 100%;
+//     color: $persianindigo;
+//     height: 700px;
+//     background-size: cover;
+//     text-align: end;
+//     font-size: 20px;
+
+.home-banner {
+  background-image: asset-url('background_mama.png');
+  width: 100%;
+  color: $richblack;
+  height: 700px;
+  background-size: cover;
+  text-align: end;
+  font-size: 60px;
+
+        }
 
 
-  }
-}
+// .banner {
+//   .home-banner {
+//     background-image: asset-url('background_mama.png');
+//     width: 100%;
+//     color: $persianindigo;
+//     height: 700px;
+//     background-size: cover;
+//     text-align: end;
+//     font-size: 20px;
 
-.text {
+
+//   }
+// }
+
+.banner_text {
   display: flex;
   flex-direction: column;
-  p {
-    margin-left: 50px
+  width: 103%;
+  align-items: flex-end;
+  width: 1200px;
+  height: 231px;
+
+
+  h1 {
+    margin-left: 50px;
+    width: 50%;
+    font-size: 50px;
+    margin-top: 40px;
+  }
+
   }
 }
+
+.slogan_text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-end;
+  h2 {
+    margin-left: 50px;
+    width: 50%;
+    font-size: 20px;
+    // font-family: "Poetsen One", sans-serif;
+    // font-weight: 400;
+    // font-style: normal;
+  }
+}
+
+
+.home-info {
+  margin: 24px 0px ;
+  .container-slogan {
+    // padding: 15px 150px;
+    // margin: 0px 150px;
+    margin: 0px 55px;
+    height: 230px;
+    overflow: hidden;
+    // height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: $lightheme;
+    // border: black, 1px, solid;
+
+
+    .container-slogan-img img {
+      background-color: transparent; /* Remove the background color */
+      width: 380px;
+      object-fit: cover;
+      padding: 8px;
+    }
+
+    .card-slogan-1 {
+      margin: 0px 26px;
+      width: 50%;
+    }
+  }
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $coral;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: $lightcoral;
+  color: white;
+}
+
+
+
+
+
+
+// @media (max-width: 800px) {
+//   .text {
+//     width: 30%;
+//   }
+// }

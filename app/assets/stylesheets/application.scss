@@ -17,4 +17,11 @@
 @import 'date_wrapper';
 
 @import 'pages/dashboard';
+@import 'pages/meals';
+@import 'pages/feedback';
+@import 'pages/form';
 @import 'components/calendar';
+
+a {
+  text-decoration: none;
+}

@@ -1,34 +1,26 @@
 <div class="container w-50">
-<h1 class="heading">Feedback</h1>
-<h3 class="heading">You results are in...</h3>
+  <div class="feedback-heading">
+    <h1 class="heading">Feedback</h1>
+    <h3 class="heading">Your results are in...</h3>
+    <h4 class="heading">You have recorded having a BM of <%= @reading %></h4>
 
-<h4 class="heading"> You have recorded having a BM of <%= @reading  %> </h4>
-<% if @reading > 4  %>
-  <p>Your value is a bit on the high side- here's some recipes we'd like to recommend , based on your BM input.<button><p> <%= link_to "See Meals", recordings_path %></p></button>
-<% elsif @reading >= 2 && @reading <= 4   %>
-  <p>Your value is normal! Well done Mama! Keep up the good work- If you want to have a look at some recipes, here are some that could inspire you <%= link_to "See Meals", recordings_path %></p>
-<% elsif @reading < 2  %>
-  <p>Your value is a bit on the low side- here's some recipes we'd like to recommend , based on your BM input. <%= link_to "See Meals", recordings_path %></p>
-<% end  %>
+    <div class="reading">
+      <% if @reading > 7.7 %>
+        <p>Your value is a bit on the high side. Here are some recipes we'd like to recommend, based on your BM input.
+      <% elsif @reading >= 4.5 && @reading <= 7.7 %>
+        <p>Your value is normal! Well done Mama! Keep up the good work. If you want to have a look at some recipes, here are some that could inspire you!
+      <% elsif @reading < 4.5 %>
+        <p>Your value is a bit on the low side. Here are some recipes we'd like to recommend, based on your BM input.
+      <% end %>
+    </div>
 
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
+    <div class="buttons-container">
+        <%= link_to "Recipes", meals_path, class: "button" %>
+    </div>
   </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Lunch
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Dinner
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Snacks
-  </div>
-
-</div>
-<%= link_to "Back to Homepage", root_path %>
-<%= link_to "See All Trends", recordings_path %>
+  <% if @reading > 7.7 %>
+    <%= render partial: "recomendation", locals: {timing: @timing_above}  %>
+  <% elsif @reading < 4.5 %>
+    <%= render partial: "recomendation", locals: {timing: @timing_below}  %>
+  <% end %>
 </div>

@@ -1,23 +1,101 @@
 // This is the SCSS for the blood form page
-.form{
-  background-color:#A58AC8;
-  margin: 0 auto;
-  border-radius: 5px;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 50px;
+  background-color: $theme;
+  border-radius: 30px;
 }
 
+.form{
+  margin: 50px auto;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+  padding: 20px 20px 20px 20px;
+}
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+// i {
+//   font-size: 60px;
+//   color: red;
+// }
 .heading{
   color:black;
   text-align:center;
 }
 
 .button{
-  color:black;
-  background-color: #f87baf;
+  color:$richblack;
+  background-color:$champpink;
   border-radius: 5px;
-  border-color:#f87baf ;
+  border-color:$champpink;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  margin: 120px;
 
+}
+
+
+#new_recording {
+  border-radius: 15px;
+  background-color: white;
+}
+#recording_reading {
+  border-radius: 15px;
+}
+
+#recording_time {
+  border-radius: 15px;
+  width: 94%;
+}
+
+#recording_date {
+  border-radius: 15px;
+}
+
+#recording_ingredients {
+  border-radius: 15px;
+  align-items: flex-start !important;
+}
+
+.recording_ingredients {
+  border-radius: 15px;
+  align-items: flex-start !important;
+}
+
+
+#edit_recording_3 {
+  background-color: white;
+  border-radius: 15px;
+}
+
+#edit_recording_2 {
+  background-color: white;
+  border-radius: 15px;
+}
+
+// .meal_input {
+//   align-items: flex-start !important;
+// }
+
+.delete_form {
+  align-items: center;
+
+  a {
+    align-items: center;
+    text-decoration: none;
+    color: $richblack;
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px 20px 20px;
+  }
 }

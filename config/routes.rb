@@ -14,7 +14,15 @@ Rails.application.routes.draw do
 
 
   # Meals/Recipe page
-  get 'meals', to: 'meals#index'
+  get '/meals/breakfast', to: 'meals#breakfast', as: 'breakfast'
+  get '/meals/lunch', to: 'meals#lunch', as: 'lunch'
+  get '/meals/snacks', to: 'meals#snacks', as: 'snacks'
+  get '/meals/dinner', to: 'meals#dinner', as: 'dinner'
+  resources :meals, only: [:index, :show]
+
+   # get '/meals/:id', to: 'meals#show', as: 'meal'
+
+
 
 
   # User Dashboard
@@ -49,6 +57,7 @@ Rails.application.routes.draw do
   #     resources :messages, only: [:create]
   #   end
   # end
+
 
 
 

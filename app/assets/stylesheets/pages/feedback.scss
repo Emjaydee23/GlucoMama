@@ -1,63 +1,138 @@
-.purple-container{
-  background-color:#A58AC8;
+.container.w-50 {
+  width: 50%;
   margin: 0 auto;
-  border-radius: 5px;
+  padding: 20px;
+
+  h1, h3 {
+    color: $persianindigo;
+  }
+
+  p{
+    color: black;
+
+  }
+
 }
 
-.heading{
-  color:black;
-  text-align:center;
+.feedback-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: $persianindigo;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  padding: 20px 20px 20px 20px;
 }
 
-.button{
-  color:black;
-  background-color: #f87baf;
-  border-radius: 5px;
-  border-color:#f87baf ;
+// .heading {
+//   text-align: center;
+//   margin-bottom: 20px;
+//   color: $persianindigo;
+// }
+
+// .reading {
+//   display: flex;
+//   flex-direction: column;
+//   width: 100%;
+//   align-items: flex-end;
+//   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+//   h2 {
+//     margin-left: 50px;
+//     width: 50%;
+//     font-family: "Poetsen One", sans-serif;
+//     font-weight: 400;
+//     font-style: normal;
+//   }
+// }
+
+.meal-index-card {
+  font-family: Arial, sans-serif;
+  margin-top: 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  text-decoration: none;
-
+  background-color: $theme;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  padding: 20px 20px 20px 20px;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+.buttons-container {
+  display: flex;
+  justify-content: center; /* Center the buttons within the container */
+  gap: 10px; /* Add space between buttons */
+  margin: 20px 0; /* Add space above and below the buttons */
 }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
+.button {
+  padding: 10px 20px; /* Adjust padding as needed */
+  background-color: $champpink; /* Button background color */
+  color: $persianindigo; /* Button text color */
+  border: none; /* Remove button border */
+  border-radius: 5px; /* Add border radius to buttons */
+  text-decoration: none; /* Remove default link underline */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Add transition effect */
+  font-family: Arial, sans-serif; /* Match the font with your existing styles */
+  font-size: 16px; /* Adjust font size */
+
+  &:hover {
+    background-color: $peach; /* Change background color on hover */
   }
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
+.meal-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  width: 100%; /* Full width of the viewport */
+  max-width: 1200px; /* Optional: maximum width to control content width */
+  justify-content: center; /* Center the cards within the container */
+}
+
+.meal-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 200px;
+  text-align: center;
+  flex: 1 1 calc(25% - 20px); /* Ensures four cards per row */
+}
+
+.meal-image img {
+  background-color: transparent;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.meal-name {
+  padding: 10px;
+}
+
+.meal-name p {
+  margin: 0;
+  font-size: 16px;
+  color: #000000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .meal-card {
+    flex: 1 1 calc(33.333% - 20px); /* Three cards per row */
   }
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
+@media (max-width: 900px) {
+  .meal-card {
+    flex: 1 1 calc(50% - 20px); /* Two cards per row */
   }
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+@media (max-width: 600px) {
+  .meal-card {
+    flex: 1 1 100%; /* One card per row */
   }
 }

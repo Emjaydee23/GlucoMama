@@ -1,19 +1,23 @@
+        <%# <i class="fa-solid fa-droplet"></i> %>
+<div class="container-form">
 
-<div class="form purple-container w-50">
-<%= simple_form_for(@recording) do |f| %>
-  <h1 class="heading info">Add Blood Glucose</h1>
+  <div class="form w-50">
+      <%= simple_form_for(@recording) do |f| %>
+        <h1 class="heading info">Add Reading</h1>
+        <%= f.input :reading, label: 'Reading (mmol/l):', size: "70x5" %>
+        <%= f.label :date %>
+        <%= f.date_field :date %>
+        <%= f.input :time, :collection => ["BB(Before Breakfast)","AB(After Breakfast)" ,"AL(After Lunch)", "AD(After Dinner)"],
+        label: 'Meal Type', error: 'Type of Meal is mandatory, please click one', input_html: { maxlength: 200 } %>
+        <h1 class="heading">Add Meal</h1>
+        <%= f.input :ingredients, as: :text, input_html: {rows: 50, cols: 100},
+        label: 'Meal & Quantity', error: 'Please enter the quanity and details of your meal', input_html: { maxlength: 200 } %>
+        <button class="button"><%= f.button :submit, 'Submit' %></button>
+      <% end %>
 
-  <%= f.input :reading, label: 'Please type in your BM (mmol/l):', size: "70x5" %>
-  <%= f.label :date %>
-  <%= f.date_field :date %>
-  <%= f.input :time, :collection => ["BB(Before Breakfast)","AB(After Breakfast)" ,"AL(After Lunch)", "AD(After Dinner)"],  label: 'When was your glucose reading taken?', error: 'Timing is mandatory, please specify one', input_html: { maxlength: 200 } %>
-  <h1 class="heading">Add Meal</h1>
-  <%= f.input :ingredients, as: :text, input_html: {rows: 50, cols: 100}, label: 'Describe what meal you had and describe quantity ', error: 'Please noted down your meal and give information on your meal', input_html: { maxlength: 200 } %>
-  <button class="button"><%= f.button :submit, 'Add' %></button>
-<% end %>
 
 
+  </div>
 
-<button class="button"><%= link_to "Back to Homepage", root_path %></button>
-<button class="button"><%= link_to "See All Trends", recordings_path %></button>
+
 </div>

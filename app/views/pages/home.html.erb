@@ -1,15 +1,55 @@
 <div class= "home-banner">
+  <div class="container">
 
-<div class="container">
-<br>
-  <h1>Healthy Choices for You and Baby</h1>
-<br>
-    <div class="text">
-      <p>Stay in control with GlucoMama, the ultimate app for managing gestational diabetes.
-      Easily track your blood sugar levels, discover delicious recipes, and get personalized insights to keep you and your baby healthy.
-      GlucoMama makes monitoring your glucose simple and stress-free, so you can focus on enjoying your pregnancy.</p>
+    <div class="banner_text">
+      <h1>Empowering Healthy Choices for You and Baby</h1>
     </div>
 
+    <div class="slogan_text">
+      <h2>Stay in control with <strong>GlucoMama</strong>, the ultimate app for managing gestational diabetes</h2>
+      <p><%= link_to 'Enter Glucose Reading', new_recording_path, class: "btn btn-flat" %></p>
+
+    </div>
+  </div>
 </div>
 
+
+<div class="home-info">
+  <div class="container-slogan mb-5" >
+    <div class="card-slogan-1">
+      <p><strong>About Gestational Diabetes</strong></p>
+      <p>Gestational diabetes develops during pregnancy when the body can't produce enough insulin, causing high blood sugar.
+        It usually resolves after childbirth but can lead to complications.
+        Management involves diet, exercise, sometimes insulin, and regular monitoring.</p>
+      <p><%= link_to 'Further info', 'https://www.nhs.uk/conditions/gestational-diabetes/', class: "btn btn-flat" %></p>
+    </div>
+    <div class="container-slogan-img">
+      <%= image_tag("slogan1.png", alt: "gestational_dbm_woman", class: "img_1") %>
+    </div>
+  </div>
+
+  <div class="container-slogan mb-5" >
+    <div class="container-slogan-img">
+      <%= image_tag("slogan2.png", alt: "dbm_woman_monitor", class: "img_2") %>
+    </div>
+    <div class="card-slogan-1">
+      <p><strong>Food & Diet</strong></p>
+      <p>What you eat during pregnacy can help your baby grow healthy and get the best start in life.
+      A healthy diet is recommended for all pregnant women. Thre are some foods that you are advised to avoid during pregnancy,
+      and there are other dietry factors to condiser when you have GDM which can affect your blood glucose.</p>
+      <p><%= link_to 'Further info', 'https://www.nhs.uk/pregnancy/keeping-well/have-a-healthy-diet/', class: "btn btn-flat" %></p>
+    </div>
+  </div>
+
+  <div class="container-slogan" >
+    <div class="card-slogan-1">
+      <p><strong>Activity & Fitness</strong></p>
+      <p>Physical activity is recommended as it beifits both you and your baby's health.
+      Physical activity can help control blood glucose levels, improve pregnancy outcomes as well as support weight managment.</p>
+      <p><%= link_to 'Further info', 'https://www.nhs.uk/pregnancy/keeping-well/exercise/', class: "btn btn-flat" %></p>
+    </div>
+    <div class="container-slogan-img">
+      <%= image_tag("jogmum.png", alt: "gestational_dbm", class: "img_3") %>
+    </div>
+  </div>
 </div>
