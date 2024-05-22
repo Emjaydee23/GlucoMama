@@ -17,6 +17,8 @@ Message.destroy_all
 Chatroom.destroy_all
 Consultation.destroy_all
 User.destroy_all
+Consultation.destroy_all
+Chatroom.destroy_all
 
 puts "Creating Users"
 clinician = User.create(email: "user@user.com", password: "123456", first_name:"User", last_name:"Using", birthday:"2024-01-01", clinician:true  )
