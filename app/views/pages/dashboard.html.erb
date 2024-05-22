@@ -14,8 +14,8 @@
 
 
          <% current_user.consultations.each do |consultation| %>
-          <%= consultation.clinician.first_name %>
-          <%= link_to "Go to Chatroom", chatroom_path(consultation.chatroom)  %>
+          <h4>Your clinician is called :<%= consultation.clinician.first_name %></h4>
+          <div style= "background-color: pink; border-radius: 5px; padding: 2px 10px;"><%= link_to "Click to chat with your Clinician", chatroom_path(consultation.chatroom)  %></div>
          <% end %>
 
 
