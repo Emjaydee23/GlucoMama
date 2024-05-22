@@ -8,11 +8,11 @@
   <%# Chat , containing Messages between the users %>
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
-      <div id="message-<%= message.id %>">
-        <small>
+      <small class="chat_description">
           <strong><%= message.user.first_name %> <%= message.user.last_name %></strong>
           <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-        </small>
+      </small>
+      <div  class= "chat_bubble" id="message-<%= message.id %>">
         <p><%= message.content %></p>
       </div>
     <% end %>
@@ -20,13 +20,13 @@
 
 <%# Enter your message to send to the chat %>
   <%= simple_form_for [@chatroom, @message],
-  html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
+  html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex " } do |f|
 %>
   <%= f.input :content,
     label: false,
     placeholder: "Messages ...",
     wrapper_html: {class: "flex-grow-1"}
   %>
-  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+  <%= f.submit "Send", class: "btn btn-primary mb-3 chat-btn" %>
 <% end %>
 </div>

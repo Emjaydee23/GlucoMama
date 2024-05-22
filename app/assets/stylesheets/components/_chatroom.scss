@@ -1,7 +1,7 @@
 .chatroom {
   background: white;
   margin-top: 9px;
-  width: 50%;
+  width: 40%;
   height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
@@ -12,6 +12,16 @@
     border-bottom: 1px solid $gray-200;
     margin-bottom: 0;
     padding: 1rem;
+  }
+
+  .chat_description{
+    font-size: x-small;
+  }
+
+  .chat_bubble{
+    background-color: pink;
+    border-radius: 5px;
+    padding: 2px 10px;
   }
 
   .messages {
@@ -28,4 +38,22 @@
       margin-bottom: 0;
     }
   }
+
+  .chat-btn {
+    color: white;
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: $coral;
+    transition: background 0.3s ease;
+  }
+
+  .chat-btn:hover {
+    background: $lightcoral;
+    color: white;
+  }
+
+  // .chat_message{
+  //   background-color: pink;
+  // }
+
 }

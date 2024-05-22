@@ -13,18 +13,22 @@ puts "Destroying data"
 
 Recording.destroy_all
 Meal.destroy_all
+Message.destroy_all
+Chatroom.destroy_all
+Consultation.destroy_all
 User.destroy_all
 
 
+
 puts "Creating Users"
-user = User.create(email: "test@test.com", password: "123456", first_name:"Test", last_name:"Testing", birthday:"2024-01-01", due_date:"2024-05-01" , clinician:false )
 clinician = User.create(email: "user@user.com", password: "123456", first_name:"User", last_name:"Using", birthday:"2024-01-01", clinician:true  )
+user = User.create(email: "test@test.com", password: "123456", first_name:"Test", last_name:"Testing", birthday:"2024-01-01", due_date:"2024-05-01" , clinician:false )
 
 puts "Creating consultation"
 consultation = Consultation.create(user: user, clinician: clinician)
 
 puts "Creating Chatrooms"
-chatroom = Chatroom.create( title:"#{Consultation.user.first_name}/#{Consultation.clinician.first_name}", consultation: consultation)
+chatroom = Chatroom.create( title:"#{consultation.user.first_name}/#{consultation.clinician.first_name}", consultation: consultation)
 
 puts "Show Meals and Recipes"
 
