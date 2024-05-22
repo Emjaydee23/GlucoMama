@@ -4,13 +4,13 @@
 <!-- Introduction and Mini-Profile -->
 <div class="intro" style="margin: 25px 50px">
   <h2>Welcome, <%= current_user.first_name %>!</h2>
-  <p>Tracking your glucose levels during pregnancy is crucial for a healthy you and your baby.</p>
+  <br>
+  <p>Keeping track of your glucose levels during pregnancy is vital for the well-being of both you and your baby. </p>
+  <p>Glucomama  is here to help you.</p>
   </div>
   <div class="mini-profile actions" style="margin: 25px 50px">
       <div class="mini-profile-info" >
         <h3>Profile</h3>
-          <%# <p><strong>Name:</strong> <%= current_user.first_name %></li></p>
-          <%# <p><strong>Due Date:</strong> <%= current_user.due_date %></p>
 
 
          <% current_user.consultations.each do |consultation| %>
@@ -30,20 +30,28 @@
         <div class="buttons-dashboard-group">
 
         <div class="button-container">
+        <div class="buttons-dashboard">
+            <%= link_to meals_path do %>
+              <%= image_tag("chatroom.png", alt: "input", class: "small-icon btn") %>
+              <p class="text-center">Chatroom</p>
+            <% end %>
+            </div>
           <div class="buttons-dashboard" style="padding: 0px">
             <%= link_to new_recording_path do %>
               <%= image_tag("monitor.png", alt: "input", class: "small-icon btn") %>
+              <p class="text-center">Add Glucose</p>
             <% end %>
           </div>
           <div class="buttons-dashboard">
             <%= link_to meals_path do %>
-              <%= image_tag("meal.png", alt: "input", class: "small-icon btn") %><p>Recipes</p>
-
+              <%= image_tag("addmeal.png", alt: "input", class: "small-icon btn") %>
+              <p class="text-center">Recipes</p>
             <% end %>
           </div>
           <div class="buttons-dashboard">
             <%= link_to recordings_path do %>
               <%= image_tag("trend.png", alt: "input", class: "small-icon btn") %>
+              <p class="text-center">View trends</p>
             <% end %>
           </div>
         </div>

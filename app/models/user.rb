@@ -12,11 +12,12 @@ class User < ApplicationRecord
 
   def set_clinician
     @clinician = User.where(clinician: true).sample
-    @consultation = Consultation.create(user: self, clinician: @clinician) #random clinician
+    @consultation = Consultation.create(user: self, clinician: @clinician) # random clinician
     @chatroom = Chatroom.create(title: "#{@consultation.user.first_name}/#{@consultation.clinician.first_name}", consultation: @consultation)
   end
 
-  def set_clinician?
+
+  def clinician?
     self.clinician
   end
 
