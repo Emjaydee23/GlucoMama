@@ -68,35 +68,42 @@
     </div>
   </div>
 
-   <div class="actions">
-    <div class="left-side">
-      <div class="current-progress">
-        <h3>Patients:</h3>
+<div class="actions-doctorp">
+  <div class="left-side">
+    <div class="current-progress">
+      <h3>Patients:</h3>
+      <div class="cards">
         <% @patients.each do |patient| %>
+
           <div class="card">
             <p><strong>Full Name:</strong> <%= patient.first_name %> <%= patient.last_name %></p>
             <p><strong>D.O.B:</strong> <%= patient.birthday.strftime("%B %d, %Y") %></p>
             <p><strong>Due Date:</strong> <%= patient.due_date.strftime("%B %d, %Y") %></p>
 
-             <%# <% current_user.patient_consultations.each do |consultation| %>
+              <%# <% current_user.patient_consultations.each do |consultation| %>
               <%# <div style= "background-color: pink; border-radius: 5px; padding: 2px 10px;"><%= link_to "Click to chat with your Patient", chatroom_path(consultation.chatroom)  %>
               <%# <% end %>
               <%= link_to chatroom_path(patient.consultations.last.chatroom) do %>
               <div style="font-size: 30px" class="mx-2">💬</div>
 
               <% end %>
-            </div>
-
-
               <div class="buttons-meals-group">
                 <%= link_to "View trend", recordings_path(patient: patient), class: "btn btn-flat" %>
               </div>
-            <%# <p><%= link_to "See Patient profile", recordings_path(patient: patient) %></p>
           </div>
-        <% end %>
+
+
+
+
+            <%# <p><%= link_to "See Patient profile", recordings_path(patient: patient) %>
+
+          <% end %>
+
+      </div>
       </div>
     </div>
   </div>
+  <%# </div> %>
 </div>
 
 <%# User.last.consultations.last.chatroom %>
