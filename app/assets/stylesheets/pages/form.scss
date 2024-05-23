@@ -16,10 +16,11 @@ form {
   padding: 0px 10px ;
 }
 
+form.edit_recording,
 form.new_recording {
   .form-control,
   .form-select {
-    width: -webkit-fill-available;
+    width: -webkit-fill-available
   }
 }
 
