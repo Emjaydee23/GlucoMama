@@ -83,16 +83,18 @@
 }
 
 .btn-primary {
-  color: $persianindigo;
-  background-color: $champpink;
+  color: white;
+  background-color: $coral;
   border-color: none;
   margin: 25px
 }
 
 .btn-primary:hover {
-  background-color: $peach;
+  background-color: $lightcoral;
   border-color: $champpink;
 }
+
+
 
 /* Strong style */
 .card strong {
@@ -110,4 +112,21 @@
 
 .card .orange {
   color: orange;
+}
+
+form.search-form {
+  padding: 0;
+  flex-direction: row;
+}
+
+// .collective-reading {
+// padding: 5px;
+// }
+
+.trends-border {
+  margin-left: -10px;
+}
+
+.trends-border.btn-flat{
+  margin: 25px;
 }

@@ -2,7 +2,17 @@
   <div class="feedback-heading">
     <h1 class="heading">Feedback</h1>
     <h3 class="heading">Your results are in...</h3>
-    <h4 class="heading">You have recorded having a BM of <%= @reading %></h4>
+    <h4 class="heading">You have recorded having a BM of</h4>
+    <% if @reading < 4.5  %>
+      <h4 style="color:blue"><%= @reading %></h4>
+    <% elsif @reading >= 4.5 && @reading <= 7.7 %>
+      <h4 style="color:green"><%= @reading %></h4>
+    <% elsif @reading > 7.7  %>
+      <h4 style="color:red"><%= @reading %></h4>
+    <% end %>
+
+
+
 
     <div class="reading">
       <% if @reading > 7.7 %>
@@ -15,7 +25,7 @@
     </div>
 
     <div class="buttons-container">
-        <%= link_to "Recipes", meals_path, class: "button" %>
+        <h5><%= link_to "Recipes", meals_path, class: "button" %></h5>
     </div>
   </div>
   <% if @reading > 7.7 %>
