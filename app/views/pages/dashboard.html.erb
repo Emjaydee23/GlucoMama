@@ -11,12 +11,12 @@
   <div class="mini-profile actions" style="margin: 25px 50px">
       <div class="mini-profile-info" >
         <h3>Profile</h3>
-
+          <br>
         <div class="d-flex">
          <% current_user.consultations.each do |consultation| %>
-          <h4><strong>Your clinician is called :</strong> <%= consultation.clinician.first_name %> </h4>
+          <h4><strong>Chat with your clinician: </strong> <%= consultation.clinician.first_name %>  </h4>
           <%= link_to  chatroom_path(consultation.chatroom) do  %>
-            <div style="font-size: 30px">💬</div>
+            <div style="font-size: 30px" class="mx-2">💬</div>
           <% end %>
          <% end %>
         </div>
@@ -24,15 +24,16 @@
 
 
         <p><strong>Name:</strong> <%= current_user.first_name %></p>
-        <p><strong>Birthday:</strong><%= current_user.birthday %></p>
-        <p><strong>Due Date:</strong><%= current_user.due_date %></p>
-        <p>
+        <p><strong>Birthday:</strong> <%= current_user.birthday.strftime("%B %d, %Y") %></p>
+        <p><strong>Due Date:</strong> <%= current_user.due_date.strftime("%B %d, %Y") %></p>
+
+
 
 
       </div>
         <div class="buttons-dashboard-group">
         <div class="button-container">
-          <div class="buttons-dashboard" style="padding: 0px">
+          <div class="buttons-dashboard">
             <%= link_to new_recording_path do %>
               <%= image_tag("monitor.png", alt: "input", class: "small-icon btn") %>
               <p class="text-center">Add Glucose</p>
@@ -126,8 +127,8 @@
                 <li>19</li>
                 <li>20</li>
                 <li>21</li>
-                <li><span class="active">22</span></li>
-                <li>23</li>
+                <li>22</li>
+                <li>23<span class="active">23</span></li>
                 <li>24</li>
                 <li>25</li>
                 <li>26</li>
