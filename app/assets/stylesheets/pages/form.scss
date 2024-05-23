@@ -40,17 +40,22 @@ form.new_recording {
 }
 
 .button{
-  color:$richblack;
-  background-color:$champpink;
-  border-radius: 5px;
-  border-color:$champpink;
+  color: white;
+  background: $coral;
+  padding: 8px 24px;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   margin: 0 auto;
-  width:50%
+  width:50%;
+  transition: background 0.3s ease;
 
+  .button:hover {
+    background: $lightcoral;
+    color: white;
+  }
 }
 
 

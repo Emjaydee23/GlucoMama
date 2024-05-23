@@ -52,10 +52,10 @@
   <h1>View your Readings</h1>
 
 
+  <%= link_to "Add Glucose", new_recording_path, class: "btn btn-flat" %>
+  <br>
+  <br>
 <div class="trends-border">
-  <%= link_to "Add Glucose", new_recording_path, class: "btn btn-primary" %>
-
-
   <div class="row m-0">
     <% @blood_glucose_recordings.each do |recording| %>
       <div class="col-12 col-sm-6 col-md-3 mb-3">
@@ -65,21 +65,21 @@
               <h6><strong> Glucose: </strong><strong style="color:red"><%= recording.reading %></strong> mmol/L</h6>
               <h6><strong> Date: </strong><%= recording.date.strftime("%d/%m/%Y") %></h6>
               <h6><strong> Time: </strong><%= recording.time %></h6>
-              <h6><strong> Meal: </strong> <%= recording.ingredients %></h6>
+              <h6><strong> Meal: </strong> <%= recording.ingredients.truncate(25) %></h6>
             </div>
           <% elsif recording.reading >= 4.5 && recording.reading <= 7.7 %>
             <div>
               <h6><strong> Glucose: </strong><strong style="color:green"><%= recording.reading %></strong> mmol/L</h6>
               <h6><strong> Date: </strong> <%= recording.date %></h6>
               <h6><strong> Time: </strong><%= recording.time %></h6>
-              <h6><strong> Meal: </strong><%= recording.ingredients %></h6>
+              <h6><strong> Meal: </strong><%= recording.ingredients.truncate(25) %></h6>
             </div>
           <% elsif recording.reading < 4.5 %>
             <div>
               <h6><strong> Glucose: </strong><strong style="color:blue"><%= recording.reading %></strong> mmol/L</h6>
               <h6><strong> Date: </strong><%= recording.date %></h6>
               <h6><strong> Time: </strong><%= recording.time %></h6>
-              <h6><strong> Meal: </strong><%= recording.ingredients %></h6>
+              <h6><strong> Meal: </strong><%= recording.ingredients.truncate(25) %></h6>
             </div>
           <% end %>
         </div>
