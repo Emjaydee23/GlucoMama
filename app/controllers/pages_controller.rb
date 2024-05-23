@@ -15,6 +15,7 @@ class PagesController < ApplicationController
 
   def clinician_dashboard
     @patients = User.where(clinician: false)
+    # @patients = @patients + @patients
     # @searches = p.where(date: params[:query])
   end
 

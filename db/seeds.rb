@@ -23,14 +23,20 @@ Chatroom.destroy_all
 
 puts "Creating Users"
 
-clinician = User.create(email: "rosa@lewagon.com", password: "123456", first_name:"Rosa", last_name:"Diaz", birthday:"2024-01-01", clinician:true  )
-user = User.create(email: "amy@lewagon.com", password: "123456", first_name:"Amy", last_name:"Santiago", birthday:"2024-01-01", due_date:"2024-05-01" , clinician:false )
+clinician = User.create(email: "rosa@lewagon.com", password: "123456", first_name:"Rosa", last_name:"Diaz", birthday:"1998-04-10", clinician:true  )
+user_one = User.create(email: "amy@lewagon.com", password: "123456", first_name:"Amy", last_name:"Santiago", birthday:"1991-09-23", due_date:"2024-06-25" , clinician:false )
+user_two = User.create(email: "monica@lewagon.com", password: "123456", first_name:"Monica", last_name:"Bing", birthday:"1989-01-12", due_date:"2024-07-01" , clinician:false )
+user_three = User.create(email: "rachel@lewagon.com", password: "123456", first_name:"Rachel", last_name:"Green", birthday:"2003-05-25", due_date:"2024-05-24" , clinician:false )
 
 puts "Creating consultation"
-consultation = Consultation.create(user: user, clinician: clinician)
+consultation_one = Consultation.create(user: user_one, clinician: clinician)
+consultation_two = Consultation.create(user: user_two, clinician: clinician)
+consultation_three = Consultation.create(user: user_three, clinician: clinician)
 
 puts "Creating Chatrooms"
-chatroom = Chatroom.create( title:"#{consultation.user.first_name}/#{consultation.clinician.first_name}", consultation: consultation)
+chatroom_one = Chatroom.create( title:"#{consultation_one.user.first_name}/#{consultation_one.clinician.first_name}", consultation: consultation_one)
+chatroom_two = Chatroom.create( title:"#{consultation_two.user.first_name}/#{consultation_two.clinician.first_name}", consultation: consultation_two)
+chatroom_three = Chatroom.create( title:"#{consultation_three.user.first_name}/#{consultation_three.clinician.first_name}", consultation: consultation_three)
 
 puts "Show Meals and Recipes"
 
