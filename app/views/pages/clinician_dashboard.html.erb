@@ -82,7 +82,8 @@
               <%# <div style= "background-color: pink; border-radius: 5px; padding: 2px 10px;"><%= link_to "Click to chat with your Patient", chatroom_path(consultation.chatroom)  %>
               <%# <% end %>
               <%= link_to chatroom_path(patient.consultations.last.chatroom) do %>
-              <div class="text-center" style="font-size: 30px">💬</div>
+              <div style="font-size: 30px" class="mx-2">💬</div>
+
               <% end %>
             </div>
 

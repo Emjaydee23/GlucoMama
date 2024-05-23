@@ -76,7 +76,7 @@
           <h3>Blood Glucose Trends</h3>
           <p><%= "Your blood glucose levels have been stable for the past few days." %></p>
           <% if current_user.recordings.where(created_at: Date.today.prev_day.all_day).any? %>
-            <%= image_tag("image.png", alt: "Day before trend", class: "img") %>
+            <%# <%= image_tag("image.png", alt: "Day before trend", class: "img") %>
           <% else %>
             <p><%= "No recordings found for the day before." %></p>
           <% end %>
