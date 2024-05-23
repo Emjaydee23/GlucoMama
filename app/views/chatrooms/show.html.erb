@@ -8,15 +8,22 @@
   <%# Chat , containing Messages between the users %>
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
-      <small class="chat_description">
-          <strong><%= message.user.first_name %> <%= message.user.last_name %></strong>
-          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-      </small>
-      <div  class= "chat_bubble" id="message-<%= message.id %>">
-        <p><%= message.content %></p>
+      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+      <div>
+        <small class="chat_description">
+            <strong><%= message.user.first_name %> <%= message.user.last_name %></strong>
+            <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+        </small>
+        <div  class= "chat_bubble <%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>" id="message-<%= message.id %>">
+
+          <p><%= message.content %></p>
+        </div>
       </div>
-    <% end %>
+    </div>
+  <% end %>
+
   </div>
+
 
 <%# Enter your message to send to the chat %>
   <%= simple_form_for [@chatroom, @message],

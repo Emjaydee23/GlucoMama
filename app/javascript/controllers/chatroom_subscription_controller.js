@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 import { createConsumer } from "@rails/actioncable"
 
 export default class extends Controller {
-  static values = { chatroomId: Number }
+  static values = { chatroomId: Number, currentUserId: Number }
   static targets = ["messages"]
 
   connect() {
