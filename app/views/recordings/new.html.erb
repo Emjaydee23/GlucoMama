@@ -4,12 +4,12 @@
   <div class="form w-50">
       <%= simple_form_for(@recording) do |f| %>
         <h1 class="heading info">New Glucose Reading</h1>
-        <h6 class="heading">Type in your latest blood glucose reading and press the 'Add' button to save and log it in to your account's review page. If you've also had a meal, use the description box to provide more information on the meal you've had</h6>
+        <h6 class="heading">Type in your latest blood glucose reading and press the 'Add' button to save and log it in to your account's review page. If you've also had a meal, use the description box to provide more information about it</h6>
         <%= f.input :reading, label: 'Reading (mmol/l):'%>
         <%= f.label :date %>
         <%= f.date_field :date  %>
         <%= f.input :time, :collection => ["BB(Before Breakfast)","AB(After Breakfast)" ,"AL(After Lunch)", "AD(After Dinner)"],
-        label: 'When did you take your blood glucose?', error: 'Type of Meal is mandatory, please click one', input_html: { maxlength: 200 } %>
+        label: 'When did you take your blood glucose?', error: 'Type of Meal is mandatory, please click one' %>
         <%= f.input :ingredients, as: :text, input_html: {rows: 50, cols: 100},
         label: 'Meal & Quantity (optional)', error: 'Please enter the quanity and details of your meal', input_html: { maxlength: 200 } %>
         <button class="button"><%= f.button :submit, 'Add Glucose' %></button>
