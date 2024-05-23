@@ -6,15 +6,6 @@ body {
 }
 
 
-// .banner {
-//   .home-banner {
-//     background-image: asset-url('background_mama.png');
-//     width: 100%;
-//     color: $persianindigo;
-//     height: 700px;
-//     background-size: cover;
-//     text-align: end;
-//     font-size: 20px;
 
 .home-banner {
   background-image: asset-url('background_mama.png');
@@ -28,34 +19,21 @@ body {
         }
 
 
-// .banner {
-//   .home-banner {
-//     background-image: asset-url('background_mama.png');
-//     width: 100%;
-//     color: $persianindigo;
-//     height: 700px;
-//     background-size: cover;
-//     text-align: end;
-//     font-size: 20px;
-
-
-//   }
-// }
 
 .banner_text {
   display: flex;
   flex-direction: column;
-  width: 103%;
+  width: 100%;
   align-items: flex-end;
-  width: 1200px;
-  height: 231px;
+  // width: 1200px;
+  // height: 231px;
 
 
-  h1 {
-    margin-left: 50px;
-    width: 50%;
-    font-size: 50px;
-    margin-top: 40px;
+  h2 {
+    margin-left: 53px;
+    width: 85%;
+    font-size: 75px;
+    margin-top: 30px;
   }
 
 }
@@ -66,10 +44,12 @@ body {
   flex-direction: column;
   width: 100%;
   align-items: flex-end;
-  h2 {
+  h3 {
     margin-left: 50px;
     width: 50%;
-    font-size: 20px;
+    font-size: 26px;
+    margin-top: 30px;
+
     // font-family: "Poetsen One", sans-serif;
     // font-weight: 400;
     // font-style: normal;
