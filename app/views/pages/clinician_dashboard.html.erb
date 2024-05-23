@@ -55,7 +55,7 @@
           <li>20</li>
           <li>21</li>
           <li>22</li>
-          <li>23<span class="active">23</span></li>
+          <li><span class="active">23</span></li>
           <li>24</li>
           <li>25</li>
           <li>26</li>
@@ -82,7 +82,8 @@
               <%# <div style= "background-color: pink; border-radius: 5px; padding: 2px 10px;"><%= link_to "Click to chat with your Patient", chatroom_path(consultation.chatroom)  %>
               <%# <% end %>
               <%= link_to chatroom_path(patient.consultations.last.chatroom) do %>
-              <div class="text-center" style="font-size: 30px">💬</div>
+              <div style="font-size: 30px" class="mx-2">💬</div>
+
               <% end %>
             </div>
 
