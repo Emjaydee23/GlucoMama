@@ -1,14 +1,14 @@
 <div class="container w-50">
   <div class="feedback-heading">
     <h1 class="heading">Feedback</h1>
-    <h3 class="heading">Your results are in...</h3>
-    <h4 class="heading">You have recorded having a BM of</h4>
+    <%# <h3 class="heading">Your results are in...</h3> %>
+    <h2 class="heading">Your glucose is:</h2>
     <% if @reading < 4.5  %>
-      <h4 style="color:blue"><%= @reading %></h4>
+      <h3 style="color:blue"><%= @reading %></h3>
     <% elsif @reading >= 4.5 && @reading <= 7.7 %>
-      <h4 style="color:green"><%= @reading %></h4>
+      <h3 style="color:green"><%= @reading %></h3>
     <% elsif @reading > 7.7  %>
-      <h4 style="color:red"><%= @reading %></h4>
+      <h3 style="color:red"><%= @reading %></h3>
     <% end %>
 
 
@@ -16,16 +16,16 @@
 
     <div class="reading">
       <% if @reading > 7.7 %>
-        <p>Your value is a bit on the high side. Here are some recipes we'd like to recommend, based on your BM input.
+        <p>Your value is a bit on the <strong>high</strong> side. Here are some recipes we'd like to recommend, based on your BM input.
       <% elsif @reading >= 4.5 && @reading <= 7.7 %>
         <p>Your value is normal! Well done Mama! Keep up the good work. If you want to have a look at some recipes, here are some that could inspire you!
       <% elsif @reading < 4.5 %>
-        <p>Your value is a bit on the low side. Here are some recipes we'd like to recommend, based on your BM input.
+        <p>Your value is a bit on the <strong>low</strong> side. Here are some recipes we'd like to recommend, based on your BM input.
       <% end %>
     </div>
 
     <div class="buttons-container">
-        <h5><%= link_to "Recipes", meals_path, class: "button" %></h5>
+        <%# <h5><%= link_to "Recipes", meals_path, class: "button" %>
     </div>
   </div>
   <% if @reading > 7.7 %>
