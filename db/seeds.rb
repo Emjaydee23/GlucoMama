@@ -24,7 +24,7 @@ Chatroom.destroy_all
 puts "Creating Users"
 
 clinician = User.create(email: "rosa@lewagon.com", password: "123456", first_name:"Rosa", last_name:"Diaz", birthday:"1998-04-10", clinician:true  )
-user_one = User.create(email: "amy@lewagon.com", password: "123456", first_name:"Amy", last_name:"Santiago", birthday:"1991-09-23", due_date:"2024-06-25" , clinician:false )
+user_one = User.create(email: "amy@lewagon.com", password: "123456", first_name:"Amy", last_name:"Santiago", birthday:"1991-07-23", due_date:"2024-06-25" , clinician:false )
 user_two = User.create(email: "monica@lewagon.com", password: "123456", first_name:"Monica", last_name:"Bing", birthday:"1989-01-12", due_date:"2024-07-01" , clinician:false )
 user_three = User.create(email: "rachel@lewagon.com", password: "123456", first_name:"Rachel", last_name:"Green", birthday:"2003-05-25", due_date:"2024-05-24" , clinician:false )
 
